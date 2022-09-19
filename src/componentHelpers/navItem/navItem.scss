@@ -1,0 +1,13 @@
+.navItem {
+  text-decoration: none;
+
+  a {
+    font-size: var(--small);
+    padding: 0 15px;
+    color: #fff;
+
+    &:hover {
+      color: #ff7864;
+    }
+  }
+}
