@@ -18,8 +18,8 @@ const NavBar = () => {
           </div>
           <ul>
             <NavItem name="Home" link="/" />
-            {/* <NavItem name="Recipes" link="#" />
-            <NavItem name="Upload" link="#" /> */}
+            <NavItem name="Recipes" link="/recipes" />
+            {/* <NavItem name="Upload" link="#" /> */}
             <NavItem name="Login" link="/login" />
             {/* <NavItem name="Register" link="#" /> */}
           </ul>
