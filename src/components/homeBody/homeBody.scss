@@ -1,5 +1,12 @@
 .homeBody {
   width: 100%;
-  height: 800px;
-  font-size: 80px;
+
+  .homeBodyWrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 2rem;
+    color: rgba(255, 255, 255, 0.7);
+  }
 }

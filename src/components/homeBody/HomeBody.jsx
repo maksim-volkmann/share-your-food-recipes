@@ -1,11 +1,14 @@
-import './homeBody.scss'
+import "./homeBody.scss";
+import HomeBodySlider from "../../componentHelpers/homeBodySlider/HomeBodySlider";
 
 const HomeBody = () => {
   return (
     <div className="homeBody">
-      <div className="homeBodyWrapper">HOMEBODY</div>
+      <div className="homeBodyWrapper">
+        <HomeBodySlider />
+      </div>
     </div>
-  )
-}
+  );
+};
 
-export default HomeBody
+export default HomeBody;
