@@ -14,6 +14,20 @@ function Recipe() {
           return (
             <div className="recipeWrapper">
               <h1>{recipe.title}</h1>
+              <div className="textWrapper">
+                <div className="textWrap">
+                  <h4>Ready In:</h4>
+                  <p>{recipe.readyInMinutes + " min"}</p>
+                </div>
+                <div className="textWrap">
+                  <h4>Servings:</h4>
+                  <p>{recipe.servings}</p>
+                </div>
+                <div className="textWrap">
+                  <h4>Calories:</h4>
+                  {/* <p>{recipe.calories}</p> */}
+                </div>
+              </div>
               <div className="recipeIntro">
                 <img src={recipe.image} alt={recipe.title} />
                 <h3 dangerouslySetInnerHTML={{ __html: recipe.summary }}></h3>
