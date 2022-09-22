@@ -21,7 +21,9 @@ const HomeBodySlider = ({
             return (
               <SplideSlide>
                 <div className="sliderItem" key={recipe.id}>
-                  <img src={recipe.image} alt={recipe.title} />
+                  <div className="imgWrapper">
+                    <img src={recipe.image} alt={recipe.title} />
+                  </div>
                   <div className="slideContent">
                     <h2>{recipe.title}</h2>
                     <p>
