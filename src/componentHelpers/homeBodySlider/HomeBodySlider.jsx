@@ -2,6 +2,7 @@ import "./homeBodySlider.scss";
 import { Splide, SplideSlide } from "@splidejs/react-splide";
 import "@splidejs/react-splide/css";
 import useRecipesHook from "../../customHooks/useRecipesHook";
+import { useNavigate } from "react-router-dom";
 
 const HomeBodySlider = ({
   sliderTitle,
@@ -12,6 +13,7 @@ const HomeBodySlider = ({
   btnTitle,
 }) => {
   const recipesState = useRecipesHook();
+  const navigate = useNavigate();
   return (
     <div className="sliderContainer">
       <h1>{sliderTitle}</h1>
@@ -35,7 +37,7 @@ const HomeBodySlider = ({
                       <span className="category">{category}</span>
                     </p>
                     <h3>{summary}</h3>
-                    <button>{btnTitle}</button>
+                    <button onClick={() => navigate("/recipe/" + recipe.id)}>{btnTitle}</button>
                   </div>
                 </div>
               </SplideSlide>
