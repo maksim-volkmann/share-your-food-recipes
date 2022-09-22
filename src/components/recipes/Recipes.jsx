@@ -6,7 +6,7 @@ import RecipesSlider from "../../componentHelpers/recipesSlider/RecipesSlider";
 function Recipes() {
   return (
     <>
-      <RecipesSlider />
+      <RecipesSlider title={"Popular Picks"} />
       <Newsletter
         title={"Join our newletter and get the latest recipes!"}
         btnTitle={"Send"}
