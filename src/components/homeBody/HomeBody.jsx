@@ -1,5 +1,6 @@
 import "./homeBody.scss";
 import HomeBodySlider from "../../componentHelpers/homeBodySlider/HomeBodySlider";
+import Newsletter from "../../componentHelpers/newsletter/Newsletter";
 
 const HomeBody = () => {
   return (
@@ -12,6 +13,10 @@ const HomeBody = () => {
           category="Category"
           summary="Summary Of The Recipe"
           btnTitle="Make this"
+        />
+        <Newsletter
+          title={"Join our newletter and get the latest recipes!"}
+          btnTitle={"Send"}
         />
       </div>
     </div>

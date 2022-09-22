@@ -3,6 +3,7 @@ import useRecipesHook from "../../customHooks/useRecipesHook";
 import { Splide, SplideSlide } from "@splidejs/react-splide";
 import "@splidejs/react-splide/css";
 import { Link } from "react-router-dom";
+import Newsletter from "../../componentHelpers/newsletter/Newsletter";
 
 function Recipes() {
   const recipesState = useRecipesHook();
@@ -31,6 +32,10 @@ function Recipes() {
           );
         })}
       </Splide>
+      <Newsletter
+        title={"Join our newletter and get the latest recipes!"}
+        btnTitle={"Send"}
+      />
     </div>
   );
 }

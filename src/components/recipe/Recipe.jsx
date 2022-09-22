@@ -1,6 +1,7 @@
 import "./recipe.scss";
 import useRecipesHook from "../../customHooks/useRecipesHook";
 import { useParams } from "react-router-dom";
+import Newsletter from "../../componentHelpers/newsletter/Newsletter";
 
 function Recipe() {
   let { id } = useParams();
@@ -51,6 +52,10 @@ function Recipe() {
             </div>
           );
         })}
+      <Newsletter
+        title={"Join our newletter and get the latest recipes!"}
+        btnTitle={"Send"}
+      />
     </>
   );
 }
