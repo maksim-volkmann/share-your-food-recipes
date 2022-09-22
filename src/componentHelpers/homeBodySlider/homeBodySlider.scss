@@ -17,6 +17,10 @@
     margin: 2rem;
     border-radius: 1rem;
     overflow: hidden;
+    transition: transform .7s;
+    &:hover {
+      transform: scale(1.1);
+    }
 
     .sliderItem {
       width: 100%;
@@ -71,6 +75,10 @@
           border: none;
           text-transform: uppercase;
           cursor: pointer;
+          transition: transform .7s;
+          &:hover {
+            transform: scale(1.1);
+          }
         }
       }
     }

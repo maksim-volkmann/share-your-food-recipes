@@ -18,7 +18,7 @@ const HomeBodySlider = ({
     <div className="sliderContainer">
       <h1>{sliderTitle}</h1>
       <div className="sliderWrapper">
-        <Splide>
+        <Splide options={{ rewind: true, type: "fade" }}>
           {recipesState.map((recipe) => {
             return (
               <SplideSlide>
@@ -37,7 +37,9 @@ const HomeBodySlider = ({
                       <span className="category">{category}</span>
                     </p>
                     <h3>{summary}</h3>
-                    <button onClick={() => navigate("/recipe/" + recipe.id)}>{btnTitle}</button>
+                    <button onClick={() => navigate("/recipe/" + recipe.id)}>
+                      {btnTitle}
+                    </button>
                   </div>
                 </div>
               </SplideSlide>
