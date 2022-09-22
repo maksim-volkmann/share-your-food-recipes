@@ -16,7 +16,7 @@ const RecipesSlider = ({ title }) => {
             arrows: true,
             rewind: true,
             pagination: false,
-            gap: "2rem",
+            gap: "0.5rem",
           }}
         >
           {recipesState.map((recipe) => {
