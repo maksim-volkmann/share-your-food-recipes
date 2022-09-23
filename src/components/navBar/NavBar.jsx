@@ -22,6 +22,7 @@ const NavBar = () => {
             {/* <NavItem name="Upload" link="#" /> */}
             <NavItem name="Login" link="/login" />
             <NavItem name="Register" link="/register" />
+            <NavItem name="Recipe" link="/recipe:id" />
             {/* <NavItem name="Register" link="#" /> */}
           </ul>
         </nav>

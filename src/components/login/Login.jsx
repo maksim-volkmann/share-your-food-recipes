@@ -62,7 +62,7 @@ const Login = () => {
 
   return (
     <>
-      <div>{onClickHandler}</div>
+      <div></div>
       <button onClick={getCurrentUser}>GET CURRENT USER</button>
       <div className="login">
         <div className="loginWrapper">

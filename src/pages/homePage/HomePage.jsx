@@ -3,6 +3,7 @@ import Header from '../../components/header/Header'
 import HomeBody from '../../components/homeBody/HomeBody'
 import NavBar from '../../components/navBar/NavBar'
 import './homePage.scss'
+import RecipeTest from './RecipeTest.jsx'
 
 const HomePage = () => {
   return (
@@ -11,6 +12,7 @@ const HomePage = () => {
       <Header />
       <HomeBody />
       <Footer />
+      <RecipeTest />
     </>
   )
 }

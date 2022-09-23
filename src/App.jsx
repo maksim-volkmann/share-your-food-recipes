@@ -9,14 +9,13 @@ import RecipesPage from './pages/recipesPage/RecipesPage'
 import RecipePage from './pages/recipePage/RecipePage'
 import RegisterPage from './pages/registerPage/RegisterPage'
 
-
 function App() {
   return (
     <Routes>
       <Route path="/" element={<HomePage />} />
       <Route path="/login" element={<LoginPage />} />
       <Route path="/recipes" element={<RecipesPage />} />
-      <Route path="/recipe/:id" element={<RecipePage />} />
+      <Route path="/recipe:id" element={<RecipePage />} />
       <Route path="/register" element={<RegisterPage />} />
     </Routes>
   )
