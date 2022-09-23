@@ -21,6 +21,7 @@ const NavBar = () => {
             {/* <NavItem name="Recipes" link="#" />
             <NavItem name="Upload" link="#" /> */}
             <NavItem name="Login" link="/login" />
+            <NavItem name="Register" link="/register" />
             {/* <NavItem name="Register" link="#" /> */}
           </ul>
         </nav>

@@ -5,12 +5,14 @@ import HomePage from './pages/homePage/HomePage'
 import LoginPage from './pages/loginPage/LoginPage'
 import { Routes, Route } from 'react-router-dom'
 import NavBar from './components/navBar/NavBar'
+import RegisterPage from './pages/registerPage/RegisterPage'
 
 function App() {
   return (
     <Routes>
       <Route path="/" element={<HomePage />} />
       <Route path="/login" element={<LoginPage />} />
+      <Route path="/register" element={<RegisterPage />} />
     </Routes>
   )
 }

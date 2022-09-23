@@ -1,5 +1,13 @@
 .loginWrapper {
-  form {
-    border: 1px solid aqua;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  border: 1px solid aqua;
+
+  .form-group {
+    label {
+      color: #fff;
+      font-size: 20px;
+    }
   }
 }
