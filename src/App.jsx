@@ -7,6 +7,8 @@ import { Routes, Route } from 'react-router-dom'
 import NavBar from './components/navBar/NavBar'
 import RecipesPage from './pages/recipesPage/RecipesPage'
 import RecipePage from './pages/recipePage/RecipePage'
+import RegisterPage from './pages/registerPage/RegisterPage'
+
 
 function App() {
   return (
@@ -15,6 +17,7 @@ function App() {
       <Route path="/login" element={<LoginPage />} />
       <Route path="/recipes" element={<RecipesPage />} />
       <Route path="/recipe/:id" element={<RecipePage />} />
+      <Route path="/register" element={<RegisterPage />} />
     </Routes>
   )
 }
