@@ -8,7 +8,7 @@ import NavBar from './components/navBar/NavBar'
 import RecipesPage from './pages/recipesPage/RecipesPage'
 import RecipePage from './pages/recipePage/RecipePage'
 import RegisterPage from './pages/registerPage/RegisterPage'
-
+import ContactPage from './pages/contactPage/ContactPage'
 
 function App() {
   return (
@@ -18,6 +18,7 @@ function App() {
       <Route path="/recipes" element={<RecipesPage />} />
       <Route path="/recipe/:id" element={<RecipePage />} />
       <Route path="/register" element={<RegisterPage />} />
+      <Route path="/contact" element={<ContactPage />} />
     </Routes>
   )
 }
