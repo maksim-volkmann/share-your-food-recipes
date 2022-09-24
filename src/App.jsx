@@ -9,6 +9,7 @@ import RecipesPage from './pages/recipesPage/RecipesPage'
 import RecipePage from './pages/recipePage/RecipePage'
 import RegisterPage from './pages/registerPage/RegisterPage'
 import ContactPage from './pages/contactPage/ContactPage'
+import NewRecipePage from './pages/newRecipePage/NewRecipePage'
 
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
       <Route path="/recipe/:id" element={<RecipePage />} />
       <Route path="/register" element={<RegisterPage />} />
       <Route path="/contact" element={<ContactPage />} />
+      <Route path="/newrecipe" element={<NewRecipePage />} />
     </Routes>
   )
 }
