@@ -8,7 +8,7 @@ const RegisterForm = () => {
     email: '',
     password: '',
   })
-
+  console.log('Register Info:')
   console.log(registerInfo)
   const onChangeHandler = (e) => {
     setRegisterInfo((prev) => ({ ...prev, [e.target.name]: e.target.value }))
@@ -31,6 +31,7 @@ const RegisterForm = () => {
 
   return (
     <>
+      <h1>Register a new account</h1>
       <div className="register">
         <div className="registerWrapper">
           <div className="form-group">
@@ -60,7 +61,7 @@ const RegisterForm = () => {
               id="password"
             />
           </div>
-          <input onClick={registerNewUser} type="submit" value="LOGIN" />
+          <input onClick={registerNewUser} type="submit" value="REGISTER" />
         </div>
       </div>
     </>

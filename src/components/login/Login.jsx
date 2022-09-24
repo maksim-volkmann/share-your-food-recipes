@@ -1,13 +1,49 @@
 import './login.scss'
 import axios from 'axios'
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 
 const Login = () => {
   const [loginInfo, setLoginInfo] = useState({ email: '', password: '' })
+  const [curr, setCurrentUser] = useState({ username: '', id: '' })
+
+  // useEffect(() => {
+  //   const user = async () => {
+  //     try {
+  //       const { data } = await axios.get(`http://localhost:5000/api/get/`, {
+  //         withCredentials: true,
+  //       })
+  //       console.log(data)
+  //     } catch (error) {
+  //       console.log(error)
+  //     }
+  //   }
+  //   user()
+  // })
+
+  useEffect(() => {
+    const onClickHandler = async () => {
+      try {
+        console.log(loginInfo)
+        const { data } = await axios.post(
+          'http://localhost:5000/api/login',
+          loginInfo,
+          { withCredentials: true },
+        )
+        setCurrentUser(data)
+        console.log('data')
+        console.log(data.data)
+        // localStorage.setItem('username', response.data.username)
+        return data
+      } catch (error) {
+        console.error(error)
+      }
+    }
+  })
 
   const onChangeHandler = (e) => {
     setLoginInfo((prev) => ({ ...prev, [e.target.name]: e.target.value }))
   }
+
   console.log('🚀 loginInfo', loginInfo)
 
   // const getAllUsers = () => {
@@ -24,6 +60,7 @@ const Login = () => {
         withCredentials: true,
       })
 
+      console.log(res)
       console.log(answer.data.username)
       console.log(req)
       return answer.data.username
@@ -33,17 +70,21 @@ const Login = () => {
     }
   }
 
-  const onClickHandler = async () => {
+  const onClickHandler = async (req, res) => {
     try {
       console.log(loginInfo)
-      const res = await axios.post(
+      const response = await axios.post(
         'http://localhost:5000/api/login',
         loginInfo,
         { withCredentials: true },
       )
+      console.log(req)
+      console.log(res)
       console.log(`res: `)
-      console.log(res.data)
-      return res.data
+      console.log(response)
+      console.log(response)
+      localStorage.setItem('username', response.data.username)
+      return response
     } catch (error) {
       console.error(error)
     }
@@ -62,7 +103,8 @@ const Login = () => {
 
   return (
     <>
-      <div></div>
+      <div>{localStorage.getItem('username')}</div>
+      <div>{onClickHandler}</div>
       <button onClick={getCurrentUser}>GET CURRENT USER</button>
       <div className="login">
         <div className="loginWrapper">
