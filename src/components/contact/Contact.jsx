@@ -13,7 +13,7 @@ const Contact = () => {
           addressTitle="Address"
           address="Happy Coding and Cooking"
           emailTitle="Email"
-          email="info@codeandcook.com"
+          email="info.cookandcode@gmail.com"
           phoneTitle="Phone"
           phone="8888888"
         />
@@ -24,10 +24,7 @@ const Contact = () => {
           btnTitle={"Send"}
         />
       </div>
-      <Newsletter
-        title={"Join our newsletter and get the latest recipes!"}
-        btnTitle={"Send"}
-      />
+      <Newsletter title={"Join our newsletter and get the latest recipes!"} />
     </>
   );
 };

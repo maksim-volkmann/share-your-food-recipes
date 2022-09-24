@@ -17,42 +17,36 @@
 
         .contactFromDetails {
             width: 70%;
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-            gap: 1rem;
-        }
+            max-width: 400px;
 
-        input {
-            width: 100%;
-            height: 30px;
-            border: 0.5px solid #1f1f1f32;
-            padding: 1rem;
-        }
-
-        .contactFormMessage {
-            width: 70%;
-            margin-top: 1rem;
-
-            #messageBox {
+            input,
+            textarea {
                 width: 100%;
+                height: 30px;
+                border: 0.5px solid #1f1f1f32;
+                padding: 1rem;
+                margin-top: 1rem;
+            }
+
+            textarea {
                 height: 100px;
             }
-        }
 
-        button {
-            width: 70px;
-            padding: 0.5rem;
-            margin-top: 0.5rem;
-            color: #fff;
-            background-color: #eabd31;
-            border: none;
-            text-transform: uppercase;
-            cursor: pointer;
-            float: right;
-            transition: transform .7s;
+            #submitBtn {
+                width: 70px;
+                padding: 0.5rem;
+                margin-top: 0.5rem;
+                color: #fff;
+                background-color: #eabd31;
+                border: none;
+                text-transform: uppercase;
+                cursor: pointer;
+                float: right;
+                transition: transform .7s;
 
-            &:hover {
-                transform: scale(1.1);
+                &:hover {
+                    transform: scale(1.1);
+                }
             }
         }
     }
