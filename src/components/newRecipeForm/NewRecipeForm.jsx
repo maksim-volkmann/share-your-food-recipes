@@ -1,18 +1,36 @@
 import "./newRecipeForm.scss";
-import { useState } from "react";
+import { useCallback, useState } from "react";
+import axios from "axios";
 
 const NewRecipeForm = ({ optionTitle, option1, option2, option3, option4 }) => {
   const [newRecipe, setNewRecipe] = useState([]);
-  const handleChange = (event) => {
-    const { name, value } = event.target;
+
+  const handleSubmit = async(e) => {
+    e.preventDefault()
+    try {
+      const res = await axios.post("http://localhost:3000/api/addRecipe", { recipe: newRecipe});
+    console.log(res)
+    } catch (error) {
+      console.error(error);
+    }
+  };
+
+  const handleChange = useCallback((event) => {
+    let { name, value } = event.target;
+    if (name === "servings") {
+      value = Number(value);
+    }
+    if (name === "calories") {
+      value = Number(value);
+    }
+    
     setNewRecipe((prevState) => {
       return {
         ...prevState,
         [name]: value,
       };
     });
-  };
-  console.log("NEw", newRecipe);
+  }, []);
 
   const {
     author,
@@ -25,10 +43,6 @@ const NewRecipeForm = ({ optionTitle, option1, option2, option3, option4 }) => {
     description2,
   } = newRecipe;
 
-  function handleSubmit(e) {
-    e.preventDefault();
-    console.log("You clicked submit.");
-  }
   return (
     <div className="newRecipeFormContainer">
       <div className="newRecipeFormWrapper">
