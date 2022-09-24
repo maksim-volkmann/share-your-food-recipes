@@ -1,44 +1,37 @@
 import './login.scss'
+import { useContext } from 'react'
 import axios from 'axios'
 import { useEffect, useState } from 'react'
+import LoggedContext from '../../context/LoggedInChecker'
+import { useNavigate } from 'react-router-dom'
 
 const Login = () => {
   const [loginInfo, setLoginInfo] = useState({ email: '', password: '' })
   const [curr, setCurrentUser] = useState({ username: '', id: '' })
 
+  const { userLoggedInInfo } = useContext(LoggedContext)
+  const history = useNavigate()
+
   // useEffect(() => {
-  //   const user = async () => {
+  //   const onClickHandler = async () => {
   //     try {
-  //       const { data } = await axios.get(`http://localhost:5000/api/get/`, {
-  //         withCredentials: true,
-  //       })
-  //       console.log(data)
+  //       console.log(loginInfo)
+  //       const { data } = await axios.post(
+  //         'http://localhost:5000/api/login',
+  //         loginInfo,
+  //         { withCredentials: true },
+  //       )
+  //       setCurrentUser(data)
+  //       await userLoggedInInfo()
+  //       console.log('data')
+  //       console.log(data.data)
+  //       // localStorage.setItem('username', response.data.username)
+  //       return data
   //     } catch (error) {
-  //       console.log(error)
+  //       console.error(error)
   //     }
   //   }
-  //   user()
   // })
-
-  useEffect(() => {
-    const onClickHandler = async () => {
-      try {
-        console.log(loginInfo)
-        const { data } = await axios.post(
-          'http://localhost:5000/api/login',
-          loginInfo,
-          { withCredentials: true },
-        )
-        setCurrentUser(data)
-        console.log('data')
-        console.log(data.data)
-        // localStorage.setItem('username', response.data.username)
-        return data
-      } catch (error) {
-        console.error(error)
-      }
-    }
-  })
 
   const onChangeHandler = (e) => {
     setLoginInfo((prev) => ({ ...prev, [e.target.name]: e.target.value }))
@@ -54,22 +47,6 @@ const Login = () => {
 
   // const [currentUser, setCurrentUser] = useState('')
 
-  const getCurrentUser = async (req, res) => {
-    try {
-      const answer = await axios.get(`http://localhost:5000/api/get/`, {
-        withCredentials: true,
-      })
-
-      console.log(res)
-      console.log(answer.data.username)
-      console.log(req)
-      return answer.data.username
-      // console.log(res)
-    } catch (error) {
-      console.error(error)
-    }
-  }
-
   const onClickHandler = async (req, res) => {
     try {
       console.log(loginInfo)
@@ -78,24 +55,13 @@ const Login = () => {
         loginInfo,
         { withCredentials: true },
       )
+      await userLoggedInInfo()
+      history('/')
       console.log(req)
       console.log(res)
       console.log(`res: `)
       console.log(response)
-      console.log(response)
-      localStorage.setItem('username', response.data.username)
       return response
-    } catch (error) {
-      console.error(error)
-    }
-  }
-
-  const getAllUsers = async () => {
-    try {
-      const res = await axios.get('http://localhost:5000/api/get/_id', {
-        withCredentials: true,
-      })
-      console.log(res.data)
     } catch (error) {
       console.error(error)
     }
@@ -105,7 +71,6 @@ const Login = () => {
     <>
       <div>{localStorage.getItem('username')}</div>
       <div>{onClickHandler}</div>
-      <button onClick={getCurrentUser}>GET CURRENT USER</button>
       <div className="login">
         <div className="loginWrapper">
           <div className="form-group">
@@ -127,7 +92,6 @@ const Login = () => {
             />
           </div>
           <input onClick={onClickHandler} type="submit" value="LOGIN" />
-          <button onClick={getAllUsers}>GET ALL USERS</button>
         </div>
       </div>
     </>

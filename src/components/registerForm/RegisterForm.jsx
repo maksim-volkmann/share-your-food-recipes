@@ -8,7 +8,7 @@ const RegisterForm = () => {
     email: '',
     password: '',
   })
-  console.log('Register Info:')
+  console.log('Register Info')
   console.log(registerInfo)
   const onChangeHandler = (e) => {
     setRegisterInfo((prev) => ({ ...prev, [e.target.name]: e.target.value }))
