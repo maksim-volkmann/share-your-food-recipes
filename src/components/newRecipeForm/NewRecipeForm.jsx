@@ -1,43 +1,45 @@
-
-import "./newRecipeForm.scss";
-import { useCallback, useState } from "react";
-import axios from "axios";
+import './newRecipeForm.scss'
+import { useCallback, useState } from 'react'
+import axios from 'axios'
 
 const NewRecipeForm = ({ optionTitle, option1, option2, option3, option4 }) => {
-  const [newRecipe, setNewRecipe] = useState([]);
+  const [newRecipe, setNewRecipe] = useState([])
 
   const handleSubmit = async (e) => {
-    e.preventDefault();
+    e.preventDefault()
     try {
-      const res = await axios.post("http://localhost:3000/api/addRecipe", {
-        recipe: newRecipe,
-      });
-      console.log(res);
+      const res = await axios.post(
+        'http://localhost:5000/recipe/create',
+        {
+          recipe: newRecipe,
+        },
+        { withCredentials: true },
+      )
+      console.log(res)
     } catch (error) {
-      console.error(error);
+      console.error(error)
     }
-  };
+  }
 
   const handleChange = useCallback((event) => {
-    let { name, value } = event.target;
-    if (name === "servings") {
-      value = Number(value);
+    let { name, value } = event.target
+    if (name === 'servings') {
+      value = Number(value)
     }
-    if (name === "calories") {
-      value = Number(value);
+    if (name === 'calories') {
+      value = Number(value)
     }
-    if (name === "readyIn") {
-      value = Number(value);
+    if (name === 'readyIn') {
+      value = Number(value)
     }
 
     setNewRecipe((prevState) => {
       return {
         ...prevState,
         [name]: value,
-      };
-    });
-  }, []);
-
+      }
+    })
+  }, [])
 
   const {
     author,
@@ -55,7 +57,7 @@ const NewRecipeForm = ({ optionTitle, option1, option2, option3, option4 }) => {
     mainImage,
     image2,
     image3,
-  } = newRecipe;
+  } = newRecipe
 
   return (
     <div className="newRecipeFormContainer">
@@ -157,7 +159,6 @@ const NewRecipeForm = ({ optionTitle, option1, option2, option3, option4 }) => {
                   value={product}
                 />
                */}
-
             </div>
             <div className="newRecipeItem5">
               <textarea
@@ -197,8 +198,7 @@ const NewRecipeForm = ({ optionTitle, option1, option2, option3, option4 }) => {
         </form>
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default NewRecipeForm;
-
+export default NewRecipeForm
