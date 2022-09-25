@@ -1,10 +1,11 @@
 import './newRecipeForm.scss'
 import { useCallback, useState } from 'react'
 import axios from 'axios'
+import { useNavigate } from 'react-router-dom'
 
 const NewRecipeForm = ({ optionTitle, option1, option2, option3, option4 }) => {
   const [newRecipe, setNewRecipe] = useState([])
-
+  const navigate = useNavigate()
   const handleSubmit = async (e) => {
     e.preventDefault()
     try {
@@ -15,7 +16,8 @@ const NewRecipeForm = ({ optionTitle, option1, option2, option3, option4 }) => {
         },
         { withCredentials: true },
       )
-      console.log(res)
+      alert("Recipe successfully created!")
+      navigate("/")
     } catch (error) {
       console.error(error)
     }
@@ -29,9 +31,6 @@ const NewRecipeForm = ({ optionTitle, option1, option2, option3, option4 }) => {
     if (name === 'calories') {
       value = Number(value)
     }
-    if (name === 'readyIn') {
-      value = Number(value)
-    }
 
     setNewRecipe((prevState) => {
       return {
@@ -42,7 +41,6 @@ const NewRecipeForm = ({ optionTitle, option1, option2, option3, option4 }) => {
   }, [])
 
   const {
-    author,
     name,
     description1,
     servings,
@@ -50,8 +48,6 @@ const NewRecipeForm = ({ optionTitle, option1, option2, option3, option4 }) => {
     readyIn,
     goodFor,
     ingredients,
-    // quantity,
-    // product,
     description2,
     mainImage,
     image2,
@@ -64,13 +60,6 @@ const NewRecipeForm = ({ optionTitle, option1, option2, option3, option4 }) => {
         <form onSubmit={handleSubmit} action="" method="post">
           <div className="newRecipeFormContent">
             <div className="newRecipeItem1">
-              <input
-                onChange={handleChange}
-                type="text"
-                name="author"
-                placeholder="Your name"
-                value={author}
-              />
               <input
                 onChange={handleChange}
                 type="text"
@@ -103,15 +92,13 @@ const NewRecipeForm = ({ optionTitle, option1, option2, option3, option4 }) => {
                 placeholder="Calories"
                 value={calories}
               />
-
               <input
                 onChange={handleChange}
-                type="number"
+                type="text"
                 name="readyIn"
                 placeholder="Ready In"
                 value={readyIn}
               />
-
               <select
                 onChange={handleChange}
                 type="text"
@@ -142,22 +129,6 @@ const NewRecipeForm = ({ optionTitle, option1, option2, option3, option4 }) => {
                 placeholder="Ingredients"
                 value={ingredients}
               />
-
-              {/* <input
-                  onChange={handleChange}
-                  type="text"
-                  name="quantity"
-                  placeholder="Quantity"
-                  value={quantity}
-                />
-                <input
-                  onChange={handleChange}
-                  type="text"
-                  name="products"
-                  placeholder="Product"
-                  value={product}
-                />
-               */}
             </div>
             <div className="newRecipeItem5">
               <textarea
@@ -168,7 +139,6 @@ const NewRecipeForm = ({ optionTitle, option1, option2, option3, option4 }) => {
                 value={description2}
               />
             </div>
-
             <div className="newRecipeItem6">
               <input
                 onChange={handleChange}
