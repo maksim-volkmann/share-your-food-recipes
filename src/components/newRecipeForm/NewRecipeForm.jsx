@@ -43,7 +43,7 @@ const NewRecipeForm = ({ optionTitle, option1, option2, option3, option4 }) => {
 
   const {
     author,
-    recipeName,
+    name,
     description1,
     servings,
     calories,
@@ -75,9 +75,9 @@ const NewRecipeForm = ({ optionTitle, option1, option2, option3, option4 }) => {
               <input
                 onChange={handleChange}
                 type="text"
-                name="recipeName"
+                name="name"
                 placeholder="Recipe title"
-                value={recipeName}
+                value={name}
               />
             </div>
             <div className="newRecipeItem2">
