@@ -49,8 +49,6 @@ const NewRecipeForm = ({ optionTitle, option1, option2, option3, option4 }) => {
     readyIn,
     goodFor,
     ingredients,
-    quantity,
-    product,
     description2,
     mainImage,
     image2,
@@ -95,15 +93,13 @@ const NewRecipeForm = ({ optionTitle, option1, option2, option3, option4 }) => {
                 placeholder="Calories"
                 value={calories}
               />
-
               <input
                 onChange={handleChange}
-                type="string"
+                type="text"
                 name="readyIn"
                 placeholder="Ready In"
                 value={readyIn}
               />
-
               <select
                 onChange={handleChange}
                 type="text"
@@ -134,20 +130,6 @@ const NewRecipeForm = ({ optionTitle, option1, option2, option3, option4 }) => {
                 placeholder="Ingredients"
                 value={ingredients}
               />
-              <input
-                onChange={handleChange}
-                type="text"
-                name="quantity"
-                placeholder="Quantity"
-                value={quantity}
-              />
-              <input
-                onChange={handleChange}
-                type="text"
-                name="products"
-                placeholder="Product"
-                value={product}
-              />
             </div>
             <div className="newRecipeItem5">
               <textarea
@@ -158,7 +140,6 @@ const NewRecipeForm = ({ optionTitle, option1, option2, option3, option4 }) => {
                 value={description2}
               />
             </div>
-
             <div className="newRecipeItem6">
               <input
                 onChange={handleChange}

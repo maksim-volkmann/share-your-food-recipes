@@ -3,9 +3,14 @@ import useRecipesHook from "../../customHooks/useRecipesHook";
 import { Splide, SplideSlide } from "@splidejs/react-splide";
 import "@splidejs/react-splide/css";
 import { Link } from "react-router-dom";
+import { useState, useMemo } from "react";
 
 const RecipesSlider = ({ title }) => {
   const recipesState = useRecipesHook();
+  const [maxRecipes, setMaxRecipes] = useState(16);
+  const  reducedRecipes = useMemo(() => {
+    return recipesState.slice(0, maxRecipes);
+  }, [maxRecipes, recipesState]);
   return (
     <div className="recipesSliderContainer">
       <h1>{title}</h1>
@@ -24,8 +29,8 @@ const RecipesSlider = ({ title }) => {
               <SplideSlide>
                 <div className="recipe" key={recipe.id}>
                   <Link to={"/recipe/" + recipe.id}>
-                    <p>{recipe.title}</p>
-                    <img src={recipe.image} alt={recipe.title} />
+                    <p>{recipe.name}</p>
+                    <img src={recipe.mainImage} alt={recipe.name} />
                   </Link>
                 </div>
               </SplideSlide>
