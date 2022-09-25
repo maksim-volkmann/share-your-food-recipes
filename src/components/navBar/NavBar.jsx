@@ -27,7 +27,6 @@ const NavBar = () => {
             {/* <NavItem name="Upload" link="#" /> */}
 
             <NavItem name="Contact" link="/contact" />
-            <NavItem name="NewRecipe" link="/newrecipe" />
 
             {isLoggedIn === false && (
               <>
@@ -36,9 +35,13 @@ const NavBar = () => {
               </>
             )}
 
-            <NavItem name="Recipe" link="/recipe:id" />
-            {isLoggedIn === true && <LogOut />}
-
+            {isLoggedIn === true && (
+              <>
+                <NavItem name="Recipe" link="/recipe:id" />
+                <NavItem name="New Recipe" link="/newrecipe" />
+                <LogOut />
+              </>
+            )}
 
             {/* <NavItem name="Register" link="#" /> */}
           </ul>
