@@ -1,8 +1,10 @@
-.header {
-  background-image: linear-gradient(
-      180deg,
-      rgba(130, 130, 130, 0.5) 0%,
-      rgba(0, 0, 0, 0.75) 100%
-    ),
-    url('https://www.elegantthemes.com/layouts/wp-content/uploads/2018/03/Image_01-2.jpg');
+.loginpage-header {
+  .header {
+    background-image: linear-gradient(
+        90deg,
+        rgba(0, 0, 0, 0.75) 0%,
+        rgba(0, 0, 0, 0.2) 100%
+      ),
+      url('../../images/login_header.jpg');
+  }
 }

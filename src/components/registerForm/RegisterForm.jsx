@@ -46,7 +46,7 @@ const RegisterForm = () => {
               type="text"
               name="username"
               id="username"
-              placeholder="username"
+              placeholder="Username"
               onChange={onChangeHandler}
             />
           </div>

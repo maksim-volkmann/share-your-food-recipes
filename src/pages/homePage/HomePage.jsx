@@ -12,11 +12,14 @@ const HomePage = () => {
   return (
     <>
       <NavBar />
-      <Header
-        title="New Recipes Every Day"
-        description="Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias consequuntur earum magnam non enim, quia quam qui! Ratione nemo ex ducimus, rerum similique odit distinctio. Odio fuga dicta nihil illo."
-        button="Browse Recipes"
-      />
+      <div className="homepage-header">
+        <Header
+          className="home-header"
+          title="New Recipes Every Day"
+          description="Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias consequuntur earum magnam non enim, quia quam qui! Ratione nemo ex ducimus, rerum similique odit distinctio. Odio fuga dicta nihil illo."
+          button="Browse Recipes"
+        />
+      </div>
       <UsersRecipes />
       <NewRecipeForm />
       <HomeBody />

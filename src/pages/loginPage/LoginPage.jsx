@@ -9,11 +9,13 @@ const LoginPage = () => {
   return (
     <>
       <NavBar />
-      <Header
-        title="Login page"
-        description="Log in, so you can share you amazing recipes here!"
-        button="Log In"
-      />
+      <div className="loginpage-header">
+        <Header
+          title="Login page"
+          description="Log in, so you can share you amazing recipes here!"
+          button="Go and log in NOW"
+        />
+      </div>
       <Login />
       <Newsletter
         title={'Join our newletter and get the latest recipes!'}
