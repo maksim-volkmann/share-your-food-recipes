@@ -2,6 +2,8 @@ import './recipe.scss'
 import useRecipesHook from '../../customHooks/useRecipesHook.js'
 import { useParams } from 'react-router-dom'
 import Newsletter from '../../componentHelpers/newsletter/Newsletter'
+import UpdateButton from '../../componentHelpers/updateButton/UpdateButton'
+import { useNavigate } from 'react-router-dom'
 
 function Recipe() {
   let { id } = useParams()
@@ -9,14 +11,17 @@ function Recipe() {
   console.log('SINGLE RECIPE')
   // console.log(id)
   console.log(recipeState)
-
+  const navigate = useNavigate();
+  
   const test1 = recipeState
     .filter((recipeID) => recipeID._id === id)
     .map((recipe) => {
       return (
         <>
-          <div className="recipeWrapper">
+          <div className="recipeWrapper" >
             <h1>{recipe.name}</h1>
+            <button onClick={() => navigate("/update/" + recipe._id)}>UPDATE</button>
+            <UpdateButton/>
             <div className="textWrapper">
               <div className="textWrap">
                 <h4>Servings:</h4>

@@ -10,6 +10,8 @@ import EditRecipe from '../updateRecipe/EditRecipe'
 import ContactPage from '../../pages/contactPage/ContactPage'
 import NewRecipePage from '../../pages/newRecipePage/NewRecipePage'
 
+import UpdateTestPage from '../../pages/updateTestPage/UpdateTestPage'
+
 const NavRouter = () => {
   const { isLoggedIn } = useContext(LoggedContext)
   return (
@@ -28,6 +30,7 @@ const NavRouter = () => {
           <>
             <Route path="/newrecipe" element={<NewRecipePage />} />
             <Route path="/recipe/:id/edit" element={<EditRecipe />} />
+            <Route path="/update/:id" element={<UpdateTestPage />} />
           </>
         )}
 
