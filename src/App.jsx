@@ -1,32 +1,6 @@
 import './App.scss'
-// import { useContext } from 'react'
 
-import Logo from './componentHelpers/Logo/Logo'
-// import HomePage from './pages/homePage/HomePage'
-// import LoginPage from './pages/loginPage/LoginPage'
-import { Routes, Route } from 'react-router-dom'
-import NavBar from './components/navBar/NavBar'
-import RecipesPage from './pages/recipesPage/RecipesPage'
-import RecipePage from './pages/recipePage/RecipePage'
-import RegisterPage from './pages/registerPage/RegisterPage'
-
-import ContactPage from './pages/contactPage/ContactPage'
-import NewRecipePage from './pages/newRecipePage/NewRecipePage'
-
-function App() {
-  return (
-    <Routes>
-      <Route path="/" element={<HomePage />} />
-      <Route path="/login" element={<LoginPage />} />
-      <Route path="/recipes" element={<RecipesPage />} />
-      <Route path="/recipe/:id" element={<RecipePage />} />
-      <Route path="/register" element={<RegisterPage />} />
-      <Route path="/contact" element={<ContactPage />} />
-      <Route path="/newrecipe" element={<NewRecipePage />} />
-    </Routes>
-=======
 import { LoggedInChecker } from './context/LoggedInChecker.jsx'
-import LoggedContext from './context/LoggedInChecker'
 import NavRouter from './components/router/NavRouter'
 
 function App() {
@@ -34,7 +8,6 @@ function App() {
     <LoggedInChecker>
       <NavRouter />
     </LoggedInChecker>
-
   )
 }
 
