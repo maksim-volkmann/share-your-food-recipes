@@ -45,6 +45,16 @@ function Recipe() {
                 <img src={recipe.mainImage} alt={recipe.name} />
               </div>
             </div>
+            <div className="recipeInfo">
+              <div className="recipeIngredients">
+                <h2>Ingredients</h2>
+                <p>{recipe.ingredients}</p>
+              </div>
+              <div className="recipeInstructions">
+                <h2>Instructions</h2>
+                <p>{recipe.description2}</p>
+              </div>
+            </div>
           </div>
         </>
       )
