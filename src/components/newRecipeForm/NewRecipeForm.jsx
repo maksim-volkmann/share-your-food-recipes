@@ -1,3 +1,4 @@
+
 import "./newRecipeForm.scss";
 import { useCallback, useState } from "react";
 import axios from "axios";
@@ -37,12 +38,14 @@ const NewRecipeForm = ({ optionTitle, option1, option2, option3, option4 }) => {
     });
   }, []);
 
+
   const {
     author,
     recipeName,
     description1,
     servings,
     calories,
+
     readyIn,
     goodFor,
     ingredients,
@@ -99,6 +102,7 @@ const NewRecipeForm = ({ optionTitle, option1, option2, option3, option4 }) => {
                 placeholder="Calories"
                 value={calories}
               />
+
               <input
                 onChange={handleChange}
                 type="number"
@@ -106,6 +110,7 @@ const NewRecipeForm = ({ optionTitle, option1, option2, option3, option4 }) => {
                 placeholder="Ready In"
                 value={readyIn}
               />
+
               <select
                 onChange={handleChange}
                 type="text"
@@ -136,6 +141,7 @@ const NewRecipeForm = ({ optionTitle, option1, option2, option3, option4 }) => {
                 placeholder="Ingredients"
                 value={ingredients}
               />
+
               {/* <input
                   onChange={handleChange}
                   type="text"
@@ -151,6 +157,7 @@ const NewRecipeForm = ({ optionTitle, option1, option2, option3, option4 }) => {
                   value={product}
                 />
                */}
+
             </div>
             <div className="newRecipeItem5">
               <textarea
@@ -161,6 +168,7 @@ const NewRecipeForm = ({ optionTitle, option1, option2, option3, option4 }) => {
                 value={description2}
               />
             </div>
+
             <div className="newRecipeItem6">
               <input
                 onChange={handleChange}
@@ -193,3 +201,4 @@ const NewRecipeForm = ({ optionTitle, option1, option2, option3, option4 }) => {
 };
 
 export default NewRecipeForm;
+

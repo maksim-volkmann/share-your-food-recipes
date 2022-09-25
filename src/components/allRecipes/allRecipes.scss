@@ -1,0 +1,30 @@
+.allRecipes {
+  padding: 150px 0;
+  max-width: 1080px;
+  margin: 0 auto;
+  .allRecipesWrapper {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .allRecipes__box {
+    flex: 1 0 21%;
+    text-align: center;
+    padding-bottom: 50px;
+
+    img {
+      width: 210px;
+      // height: auto;
+    }
+
+    a {
+      color: #ffbf00;
+
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+}

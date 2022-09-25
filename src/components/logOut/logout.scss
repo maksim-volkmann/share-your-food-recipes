@@ -1,0 +1,11 @@
+.logout {
+  font-size: var(--small);
+  padding: 0 15px 10px;
+  color: #fff;
+  border-bottom: 1px solid #fff;
+  cursor: pointer;
+
+  &:hover {
+    color: #ff7864;
+  }
+}

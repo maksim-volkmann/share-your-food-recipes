@@ -1,4 +1,4 @@
-import "./displayNewRecipe.scss";
+import './displayNewRecipe.scss'
 
 const DisplayNewRecipe = ({
   titleLeft,
@@ -32,7 +32,7 @@ const DisplayNewRecipe = ({
           </div>
         </div>
         <div className="newRecipe right">
-        <div className="newRecipeText">
+          <div className="newRecipeText">
             <p>{descriptionRight}</p>
           </div>
           <div>
@@ -49,7 +49,7 @@ const DisplayNewRecipe = ({
         </div>
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default DisplayNewRecipe;
+export default DisplayNewRecipe

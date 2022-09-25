@@ -1,6 +1,5 @@
-import "./homeBody.scss";
-import HomeBodySlider from "../../componentHelpers/homeBodySlider/HomeBodySlider";
-import Newsletter from "../../componentHelpers/newsletter/Newsletter";
+import './homeBody.scss'
+import HomeBodySlider from '../../componentHelpers/homeBodySlider/HomeBodySlider'
 
 const HomeBody = () => {
   return (
@@ -14,13 +13,9 @@ const HomeBody = () => {
           summary="Summary Of The Recipe"
           btnTitle="Make this"
         />
-        <Newsletter
-          title={"Join our newletter and get the latest recipes!"}
-          btnTitle={"Send"}
-        />
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default HomeBody;
+export default HomeBody
