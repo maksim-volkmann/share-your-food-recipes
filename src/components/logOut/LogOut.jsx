@@ -2,6 +2,7 @@ import { useContext } from 'react'
 import LoggedContext from '../../context/LoggedInChecker'
 import axios from 'axios'
 import { useNavigate } from 'react-router-dom'
+import './logout.scss'
 
 const LogOut = () => {
   const { userLoggedInInfo } = useContext(LoggedContext)
@@ -14,7 +15,13 @@ const LogOut = () => {
     await userLoggedInInfo()
     history('/')
   }
-  return <button onClick={logMeOut}>LOG OUT</button>
+  return (
+    <li>
+      <a className="logout" onClick={logMeOut}>
+        Log out
+      </a>
+    </li>
+  )
 }
 
 export default LogOut

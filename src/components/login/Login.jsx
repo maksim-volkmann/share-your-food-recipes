@@ -64,6 +64,7 @@ const Login = () => {
       return response
     } catch (error) {
       console.error(error)
+      alert('Wrong email or password')
     }
   }
 
@@ -74,24 +75,29 @@ const Login = () => {
       <div className="login">
         <div className="loginWrapper">
           <div className="form-group">
-            <label htmlFor="name">Email: </label>
             <input
-              onChange={onChangeHandler}
               type="email"
               name="email"
               id="email"
+              placeholder="Email"
+              onChange={onChangeHandler}
             />
           </div>
           <div className="form-group">
-            <label htmlFor="password">Password:</label>
             <input
               onChange={onChangeHandler}
               type="password"
               name="password"
               id="password"
+              placeholder="Password"
             />
           </div>
-          <input onClick={onClickHandler} type="submit" value="LOGIN" />
+          <input
+            className="submit"
+            onClick={onClickHandler}
+            type="submit"
+            value="LOGIN"
+          />
         </div>
       </div>
     </>

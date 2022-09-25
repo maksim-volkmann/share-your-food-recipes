@@ -6,7 +6,7 @@ import Newsletter from '../../componentHelpers/newsletter/Newsletter'
 function Recipe() {
   let { id } = useParams()
   const recipeState = useRecipesHook()
-  console.log('id')
+  console.log('SINGLE RECIPE')
   // console.log(id)
   console.log(recipeState)
 

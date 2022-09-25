@@ -1,5 +1,6 @@
 import axios from 'axios'
 import { useState } from 'react'
+import { useNavigate } from 'react-router-dom'
 import './registerForm.scss'
 
 const RegisterForm = () => {
@@ -8,6 +9,9 @@ const RegisterForm = () => {
     email: '',
     password: '',
   })
+
+  const history = useNavigate()
+
   console.log('Register Info')
   console.log(registerInfo)
   const onChangeHandler = (e) => {
@@ -23,7 +27,11 @@ const RegisterForm = () => {
         { withCredentials: true },
       )
       console.log(`res: `)
+      history('/login')
       console.log(res)
+      alert(
+        `User ${registerInfo.username} successfully registered. You can log in now!`,
+      )
     } catch (error) {
       console.error(error)
     }
@@ -31,37 +39,41 @@ const RegisterForm = () => {
 
   return (
     <>
-      <h1>Register a new account</h1>
       <div className="register">
         <div className="registerWrapper">
           <div className="form-group">
-            <label htmlFor="name">Name: </label>
             <input
-              onChange={onChangeHandler}
               type="text"
               name="username"
-              id="name"
+              id="username"
+              placeholder="username"
+              onChange={onChangeHandler}
             />
           </div>
           <div className="form-group">
-            <label htmlFor="name">Email: </label>
             <input
-              onChange={onChangeHandler}
               type="email"
               name="email"
               id="email"
+              placeholder="Email"
+              onChange={onChangeHandler}
             />
           </div>
           <div className="form-group">
-            <label htmlFor="password">Password:</label>
             <input
               onChange={onChangeHandler}
               type="password"
               name="password"
               id="password"
+              placeholder="Password"
             />
           </div>
-          <input onClick={registerNewUser} type="submit" value="REGISTER" />
+          <input
+            className="submit"
+            onClick={registerNewUser}
+            type="submit"
+            value="REGISTER"
+          />
         </div>
       </div>
     </>

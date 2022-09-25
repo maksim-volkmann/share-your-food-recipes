@@ -1,7 +1,7 @@
-import NavBar from "../../components/navBar/NavBar";
-import Header from "../../components/header/Header";
-import Footer from "../../components/footer/Footer";
-import Recipes from "../../components/recipes/Recipes";
+import NavBar from '../../components/navBar/NavBar'
+import Header from '../../components/header/Header'
+import Footer from '../../components/footer/Footer'
+import Recipes from '../../components/recipes/Recipes'
 
 const RecipesPage = () => {
   return (
@@ -11,7 +11,7 @@ const RecipesPage = () => {
       <Recipes />
       <Footer />
     </>
-  );
-};
+  )
+}
 
-export default RecipesPage;
+export default RecipesPage
