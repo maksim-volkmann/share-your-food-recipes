@@ -24,7 +24,7 @@ function Recipe() {
               </div>
               <div className="textWrap">
                 <h4>Ready In:</h4>
-                <p>{recipe.readyin}</p>
+                <p>{recipe.readyIn}</p>
               </div>
               <div className="textWrap">
                 <h4>Calories:</h4>
@@ -32,7 +32,7 @@ function Recipe() {
               </div>
               <div className="textWrap">
                 <h4>Good For:</h4>
-                <p>{recipe.goodfor}</p>
+                <p>{recipe.goodFor}</p>
               </div>
             </div>
             <div className="introduction">
@@ -45,6 +45,20 @@ function Recipe() {
                 <img src={recipe.mainImage} alt={recipe.name} />
               </div>
             </div>
+            <div className="recipeInfo">
+                <div className="recipeIngredients">
+                  <h2>Ingredients</h2>
+                  <p>
+                    {recipe.ingredients}
+                  </p>
+                </div>
+                <div className="recipeInstructions">
+                  <h2>Instructions</h2>
+                  <p>
+                    {recipe.description2}
+                  </p>
+                </div>
+              </div>
           </div>
         </>
       )
