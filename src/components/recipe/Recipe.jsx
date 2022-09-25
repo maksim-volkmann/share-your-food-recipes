@@ -2,6 +2,8 @@ import './recipe.scss'
 import useRecipesHook from '../../customHooks/useRecipesHook.js'
 import { useParams } from 'react-router-dom'
 import Newsletter from '../../componentHelpers/newsletter/Newsletter'
+import UpdateButton from '../../componentHelpers/updateButton/UpdateButton'
+import { useNavigate } from 'react-router-dom'
 
 function Recipe() {
   let { id } = useParams()
@@ -9,14 +11,17 @@ function Recipe() {
   console.log('SINGLE RECIPE')
   // console.log(id)
   console.log(recipeState)
-
+  const navigate = useNavigate();
+  
   const test1 = recipeState
     .filter((recipeID) => recipeID._id === id)
     .map((recipe) => {
       return (
         <>
-          <div className="recipeWrapper">
+          <div className="recipeWrapper" >
             <h1>{recipe.name}</h1>
+            <button onClick={() => navigate("/update/" + recipe._id)}>UPDATE</button>
+            <UpdateButton/>
             <div className="textWrapper">
               <div className="textWrap">
                 <h4>Servings:</h4>
@@ -24,7 +29,7 @@ function Recipe() {
               </div>
               <div className="textWrap">
                 <h4>Ready In:</h4>
-                <p>{recipe.readyin}</p>
+                <p>{recipe.readyIn}</p>
               </div>
               <div className="textWrap">
                 <h4>Calories:</h4>
@@ -32,7 +37,7 @@ function Recipe() {
               </div>
               <div className="textWrap">
                 <h4>Good For:</h4>
-                <p>{recipe.goodfor}</p>
+                <p>{recipe.goodFor}</p>
               </div>
             </div>
             <div className="introduction">
@@ -43,6 +48,16 @@ function Recipe() {
               </div>
               <div className="introductionWrapper">
                 <img src={recipe.mainImage} alt={recipe.name} />
+              </div>
+            </div>
+            <div className="recipeInfo">
+              <div className="recipeIngredients">
+                <h2>Ingredients</h2>
+                <p>{recipe.ingredients}</p>
+              </div>
+              <div className="recipeInstructions">
+                <h2>Instructions</h2>
+                <p>{recipe.description2}</p>
               </div>
             </div>
           </div>
