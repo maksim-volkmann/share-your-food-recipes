@@ -38,9 +38,13 @@ const NewRecipeForm = ({ optionTitle, option1, option2, option3, option4 }) => {
     description1,
     servings,
     calories,
+    readyIn,
     goodFor,
     ingredients,
     description2,
+    mainImage,
+    image2,
+    image3,
   } = newRecipe;
 
   return (
@@ -88,6 +92,13 @@ const NewRecipeForm = ({ optionTitle, option1, option2, option3, option4 }) => {
                 placeholder="Calories"
                 value={calories}
               />
+              <input
+                onChange={handleChange}
+                type="number"
+                name="readyIn"
+                placeholder="Ready In"
+                value={readyIn}
+              />
               <select
                 onChange={handleChange}
                 type="text"
@@ -127,6 +138,26 @@ const NewRecipeForm = ({ optionTitle, option1, option2, option3, option4 }) => {
                 placeholder="Instructions"
                 value={description2}
               />
+            </div>
+            <div className="newRecipeItem6">
+              <input
+                onChange={handleChange}
+                type="text"
+                name="mainImage"
+                placeholder="Write images URL"
+                value={mainImage} />
+              <input
+                onChange={handleChange}
+                type="text"
+                name="image2"
+                placeholder="Write images URL"
+                value={image2} />
+              <input
+                onChange={handleChange}
+                type="text"
+                name="image3"
+                placeholder="Write images URL"
+                value={image3} />
             </div>
             <input id="submitBtn" type="submit" value="Submit" />
           </div>

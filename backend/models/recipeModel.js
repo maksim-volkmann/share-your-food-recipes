@@ -6,26 +6,26 @@ const recipeSchema = new mongoose.Schema(
       type: String,
       required: true,
     },
-    // mainImage: {
-    //   type: String,
-    //   required: true,
-    // },
-    // image2: {
-    //   type: String,
-    //   required: true,
-    // },
-    // image3: {
-    //   type: String,
-    //   required: true,
-    // },
+    mainImage: {
+      type: String,
+      required: true,
+    },
+    image2: {
+      type: String,
+      required: true,
+    },
+    image3: {
+      type: String,
+      required: true,
+    },
     servings: {
       type: Number,
       required: true,
     },
-    // readyin: {
-    //   type: String,
-    //   required: true,
-    // },
+    readyIn: {
+      type: String,
+      required: true,
+    },
     calories: {
       type: Number,
       required: true,
