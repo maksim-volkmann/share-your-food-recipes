@@ -1,38 +1,43 @@
-import './newRecipeForm.scss'
-import { useCallback, useState } from 'react'
-import axios from 'axios'
+
+import "./newRecipeForm.scss";
+import { useCallback, useState } from "react";
+import axios from "axios";
 
 const NewRecipeForm = ({ optionTitle, option1, option2, option3, option4 }) => {
-  const [newRecipe, setNewRecipe] = useState([])
+  const [newRecipe, setNewRecipe] = useState([]);
 
   const handleSubmit = async (e) => {
-    e.preventDefault()
+    e.preventDefault();
     try {
-      const res = await axios.post('http://localhost:3000/api/addRecipe', {
+      const res = await axios.post("http://localhost:3000/api/addRecipe", {
         recipe: newRecipe,
-      })
-      console.log(res)
+      });
+      console.log(res);
     } catch (error) {
-      console.error(error)
+      console.error(error);
     }
-  }
+  };
 
   const handleChange = useCallback((event) => {
-    let { name, value } = event.target
-    if (name === 'servings') {
-      value = Number(value)
+    let { name, value } = event.target;
+    if (name === "servings") {
+      value = Number(value);
     }
-    if (name === 'calories') {
-      value = Number(value)
+    if (name === "calories") {
+      value = Number(value);
+    }
+    if (name === "readyIn") {
+      value = Number(value);
     }
 
     setNewRecipe((prevState) => {
       return {
         ...prevState,
         [name]: value,
-      }
-    })
-  }, [])
+      };
+    });
+  }, []);
+
 
   const {
     author,
@@ -40,10 +45,17 @@ const NewRecipeForm = ({ optionTitle, option1, option2, option3, option4 }) => {
     description1,
     servings,
     calories,
+
+    readyIn,
     goodFor,
     ingredients,
+    // quantity,
+    // product,
     description2,
-  } = newRecipe
+    mainImage,
+    image2,
+    image3,
+  } = newRecipe;
 
   return (
     <div className="newRecipeFormContainer">
@@ -90,6 +102,15 @@ const NewRecipeForm = ({ optionTitle, option1, option2, option3, option4 }) => {
                 placeholder="Calories"
                 value={calories}
               />
+
+              <input
+                onChange={handleChange}
+                type="number"
+                name="readyIn"
+                placeholder="Ready In"
+                value={readyIn}
+              />
+
               <select
                 onChange={handleChange}
                 type="text"
@@ -120,6 +141,23 @@ const NewRecipeForm = ({ optionTitle, option1, option2, option3, option4 }) => {
                 placeholder="Ingredients"
                 value={ingredients}
               />
+
+              {/* <input
+                  onChange={handleChange}
+                  type="text"
+                  name="quantity"
+                  placeholder="Quantity"
+                  value={quantity}
+                />
+                <input
+                  onChange={handleChange}
+                  type="text"
+                  name="products"
+                  placeholder="Product"
+                  value={product}
+                />
+               */}
+
             </div>
             <div className="newRecipeItem5">
               <textarea
@@ -130,12 +168,37 @@ const NewRecipeForm = ({ optionTitle, option1, option2, option3, option4 }) => {
                 value={description2}
               />
             </div>
+
+            <div className="newRecipeItem6">
+              <input
+                onChange={handleChange}
+                type="text"
+                name="mainImage"
+                placeholder="Write images URL"
+                value={mainImage}
+              />
+              <input
+                onChange={handleChange}
+                type="text"
+                name="image2"
+                placeholder="Write images URL"
+                value={image2}
+              />
+              <input
+                onChange={handleChange}
+                type="text"
+                name="image3"
+                placeholder="Write images URL"
+                value={image3}
+              />
+            </div>
             <input id="submitBtn" type="submit" value="Submit" />
           </div>
         </form>
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default NewRecipeForm
+export default NewRecipeForm;
+

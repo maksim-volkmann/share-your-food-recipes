@@ -1,0 +1,27 @@
+    .contactInfoWrapper {
+        width: 80%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        color: #fff;
+
+        h1 {
+            padding: 2rem;
+        }
+
+        .contactInfoContent {
+            width: 60%;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 3rem;
+
+            .contactInfoItem {
+            padding: 1rem;
+            line-height: 2rem;
+
+                .icons {
+                    color: #eabd31;
+                }
+            }
+        }
+    }
