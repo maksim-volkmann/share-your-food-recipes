@@ -5,7 +5,7 @@ import { useNavigate } from 'react-router-dom'
 
 const NewRecipeForm = ({ optionTitle, option1, option2, option3, option4 }) => {
   const [newRecipe, setNewRecipe] = useState([])
-  const navigate = useNavigate()
+  const history = useNavigate()
   const handleSubmit = async (e) => {
     e.preventDefault()
     try {
@@ -16,8 +16,9 @@ const NewRecipeForm = ({ optionTitle, option1, option2, option3, option4 }) => {
         },
         { withCredentials: true },
       )
-      alert("Recipe successfully created!")
-      navigate("/")
+      alert(`New recipe ${newRecipe.name} was successfully created!`)
+      history(0)
+      console.log(newRecipe)
     } catch (error) {
       console.error(error)
     }
