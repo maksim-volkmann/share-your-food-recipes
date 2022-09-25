@@ -6,7 +6,6 @@ import LoginPage from '../../pages/loginPage/LoginPage'
 import RecipesPage from '../../pages/recipesPage/RecipesPage'
 import RecipePage from '../../pages/recipePage/RecipePage'
 import RegisterPage from '../../pages/registerPage/RegisterPage'
-import LogOut from '../logOut/LogOut'
 
 const NavRouter = () => {
   const { isLoggedIn } = useContext(LoggedContext)

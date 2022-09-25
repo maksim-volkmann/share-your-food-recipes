@@ -7,6 +7,7 @@ import UsersRecipes from '../../components/usersRecipes/UsersRecipes'
 import './homePage.scss'
 import RecipeTest from './RecipeTest.jsx'
 import Newsletter from '../../componentHelpers/newsletter/Newsletter'
+import AllRecipes from '../../components/allRecipes/AllRecipes'
 
 const HomePage = () => {
   return (
@@ -20,6 +21,7 @@ const HomePage = () => {
           button="Browse Recipes"
         />
       </div>
+      <AllRecipes />
       <UsersRecipes />
       <NewRecipeForm />
       <HomeBody />
