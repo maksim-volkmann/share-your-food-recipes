@@ -5,11 +5,13 @@ import axios from "axios";
 const NewRecipeForm = ({ optionTitle, option1, option2, option3, option4 }) => {
   const [newRecipe, setNewRecipe] = useState([]);
 
-  const handleSubmit = async(e) => {
-    e.preventDefault()
+  const handleSubmit = async (e) => {
+    e.preventDefault();
     try {
-      const res = await axios.post("http://localhost:3000/api/addRecipe", { recipe: newRecipe});
-    console.log(res)
+      const res = await axios.post("http://localhost:3000/api/addRecipe", {
+        recipe: newRecipe,
+      });
+      console.log(res);
     } catch (error) {
       console.error(error);
     }
@@ -23,7 +25,10 @@ const NewRecipeForm = ({ optionTitle, option1, option2, option3, option4 }) => {
     if (name === "calories") {
       value = Number(value);
     }
-    
+    if (name === "readyIn") {
+      value = Number(value);
+    }
+
     setNewRecipe((prevState) => {
       return {
         ...prevState,
@@ -41,6 +46,8 @@ const NewRecipeForm = ({ optionTitle, option1, option2, option3, option4 }) => {
     readyIn,
     goodFor,
     ingredients,
+    // quantity,
+    // product,
     description2,
     mainImage,
     image2,
@@ -129,6 +136,21 @@ const NewRecipeForm = ({ optionTitle, option1, option2, option3, option4 }) => {
                 placeholder="Ingredients"
                 value={ingredients}
               />
+              {/* <input
+                  onChange={handleChange}
+                  type="text"
+                  name="quantity"
+                  placeholder="Quantity"
+                  value={quantity}
+                />
+                <input
+                  onChange={handleChange}
+                  type="text"
+                  name="products"
+                  placeholder="Product"
+                  value={product}
+                />
+               */}
             </div>
             <div className="newRecipeItem5">
               <textarea
@@ -145,19 +167,22 @@ const NewRecipeForm = ({ optionTitle, option1, option2, option3, option4 }) => {
                 type="text"
                 name="mainImage"
                 placeholder="Write images URL"
-                value={mainImage} />
+                value={mainImage}
+              />
               <input
                 onChange={handleChange}
                 type="text"
                 name="image2"
                 placeholder="Write images URL"
-                value={image2} />
+                value={image2}
+              />
               <input
                 onChange={handleChange}
                 type="text"
                 name="image3"
                 placeholder="Write images URL"
-                value={image3} />
+                value={image3}
+              />
             </div>
             <input id="submitBtn" type="submit" value="Submit" />
           </div>
