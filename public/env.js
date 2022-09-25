@@ -4,7 +4,7 @@ window.env = {
   "APPLICATION_INSIGHTS_NO_DIAGNOSTIC_CHANNEL": "true",
   "ChocolateyInstall": "C:\\ProgramData\\chocolatey",
   "ChocolateyLastPathUpdate": "133058096632833053",
-  "CHROME_CRASHPAD_PIPE_NAME": "\\\\.\\pipe\\crashpad_3564_OGFEEJKWBHBQQRZW",
+  "CHROME_CRASHPAD_PIPE_NAME": "\\\\.\\pipe\\crashpad_15548_ERCRGEUARERZZHTT",
   "COLOR": "1",
   "COLORTERM": "truecolor",
   "CommonProgramFiles": "C:\\Program Files\\Common Files",
@@ -88,6 +88,6 @@ window.env = {
   "windir": "C:\\WINDOWS",
   "WSLENV": "WT_SESSION::WT_PROFILE_ID",
   "WT_PROFILE_ID": "{574e775e-4f2a-5b96-ac1e-a2962a402336}",
-  "WT_SESSION": "9aa937c8-dd90-458a-b0d3-29d8698579aa",
+  "WT_SESSION": "a29549fc-b75d-4fb7-af10-420b5262dd15",
   "ZES_ENABLE_SYSMAN": "1"
 };

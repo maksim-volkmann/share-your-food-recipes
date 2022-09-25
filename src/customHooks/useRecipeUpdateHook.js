@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react'
 import mockData from '../mock/mockData.js'
 import axios from 'axios'
 
-function useRecipeUpdateHook(updateRecipe) {
+function useRecipesHook() {
   const [recipesState, setRecipes] = useState([])
   const url = 'http://localhost:5000/recipe/get'
 
@@ -21,9 +21,9 @@ function useRecipeUpdateHook(updateRecipe) {
       }
     }
     getRecipes()
-  }, [updateRecipe])
+  }, [])
 
   return recipesState
 }
 
-export default useRecipeUpdateHook
+export default useRecipesHook

@@ -1,9 +1,9 @@
-import "../newRecipeForm/newRecipeForm.scss";
-import { useCallback, useState } from "react";
-import axios from "axios";
-import { useParams } from "react-router-dom";
-import useRecipesHook from "../../customHooks/useRecipesHook.js";
-import useRecipeUpdateHook from "../../customHooks/useRecipeUpdateHook";
+import '../newRecipeForm/newRecipeForm.scss'
+import { useCallback, useState } from 'react'
+import axios from 'axios'
+import { useParams } from 'react-router-dom'
+import useRecipesHook from '../../customHooks/useRecipesHook.js'
+import useRecipeUpdateHook from '../../customHooks/useRecipeUpdateHook'
 
 const UpdateTestForm = ({
   optionTitle,
@@ -12,51 +12,52 @@ const UpdateTestForm = ({
   option3,
   option4,
 }) => {
-  let { id } = useParams();
-  const recipeState = useRecipeUpdateHook();
+  let { id } = useParams()
+  const recipeState = useRecipeUpdateHook()
 
-  const [recipeUpdate, setRecipeUpdate] = useState([]);
+  const url = 'http://localhost:5000/recipe/update/'
+
+  const [recipeUpdate, setRecipeUpdate] = useState([])
 
   const handleSubmit = async (e) => {
-    e.preventDefault();
+    e.preventDefault()
     try {
       const res = await axios.put(
-        "http://localhost:5000/recipe/update/:id",
+        `http://localhost:5000/recipe/update/${id}`,
         {
-          recipe: recipeUpdate,
+          ...recipeUpdate,
         },
-        { withCredentials: true }
-      );
-      console.log(res);
+        { withCredentials: true },
+      )
+      console.log(res)
     } catch (error) {
-      console.error(error);
+      console.error(error)
     }
 
-    console.log("UPDATED", recipeUpdate)
-  };
+    console.log('UPDATED', recipeUpdate)
+  }
 
   const handleChange = useCallback((event) => {
-    let { name, value } = event.target;
-    if (name === "servings") {
-      value = Number(value);
+    let { name, value } = event.target
+    if (name === 'servings') {
+      value = Number(value)
     }
-    if (name === "calories") {
-      value = Number(value);
+    if (name === 'calories') {
+      value = Number(value)
     }
-    if (name === "readyIn") {
-      value = Number(value);
+    if (name === 'readyIn') {
+      value = Number(value)
     }
 
     setRecipeUpdate((prevState) => {
       return {
         ...prevState,
         [name]: value,
-      };
-    });
-  }, []);
+      }
+    })
+  }, [])
 
   const {
-    author,
     name,
     description1,
     servings,
@@ -68,34 +69,32 @@ const UpdateTestForm = ({
     mainImage,
     image2,
     image3,
-  } = recipeUpdate;
+  } = recipeUpdate
 
   return (
     <>
       {recipeState
         .filter((recipeID) => recipeID._id === id)
         .map((recipe) => {
-          console.log('SINGLE RECIPE',recipe)
+          console.log('SINGLE RECIPE', recipe)
           return (
             <>
               <div className="newRecipeFormContainer">
                 <div className="newRecipeFormWrapper">
-                  <form onSubmit={handleSubmit} action="" method="put" key={recipe.id}>
+                  <form
+                    onSubmit={handleSubmit}
+                    action=""
+                    method="put"
+                    key={recipe.id}
+                  >
                     <div className="newRecipeFormContent">
                       <div className="newRecipeItem1">
                         <input
                           onChange={handleChange}
                           type="text"
-                          name="author"
-                          placeholder="Your name"
-                          value={author}
-                        />
-                        <input
-                          onChange={handleChange}
-                          type="text"
                           name="name"
                           placeholder="Recipe title"
-                          value={name}
+                          defaultValue={recipe.name}
                         />
                       </div>
                       <div className="newRecipeItem2">
@@ -104,7 +103,7 @@ const UpdateTestForm = ({
                           type="text"
                           name="description1"
                           placeholder="Summary"
-                          value={description1}
+                          defaultValue={recipe.description1}
                         />
                       </div>
                       <div className="newRecipeItem3">
@@ -199,10 +198,10 @@ const UpdateTestForm = ({
                 </div>
               </div>
             </>
-          );
+          )
         })}
     </>
-  );
-};
+  )
+}
 
-export default UpdateTestForm;
+export default UpdateTestForm
