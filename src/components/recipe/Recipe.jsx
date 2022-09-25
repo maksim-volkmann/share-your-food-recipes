@@ -2,7 +2,7 @@ import './recipe.scss'
 import useRecipesHook from '../../customHooks/useRecipesHook.js'
 import { useParams } from 'react-router-dom'
 import Newsletter from '../../componentHelpers/newsletter/Newsletter'
-import UpdateButton from '../../componentHelpers/updateButton/UpdateButton'
+import DeleteRecipeButton from '../../componentHelpers/deleteRecipeButton/DeleteRecipeButton'
 import { useNavigate } from 'react-router-dom'
 
 function Recipe() {
@@ -21,7 +21,9 @@ function Recipe() {
           <div className="recipeWrapper" >
             <h1>{recipe.name}</h1>
             <button onClick={() => navigate("/update/" + recipe._id)}>UPDATE</button>
-            <UpdateButton/>
+            <DeleteRecipeButton
+            btnTitle="Delete"
+            />
             <div className="textWrapper">
               <div className="textWrap">
                 <h4>Servings:</h4>
