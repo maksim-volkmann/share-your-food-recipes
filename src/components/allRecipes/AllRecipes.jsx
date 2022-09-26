@@ -6,6 +6,7 @@ const AllRecipes = () => {
   const recipeUrl = 'recipe/'
   return (
     <div className="allRecipes">
+      <h1>ALL YOUR FAVORITE RECIPES</h1>
       <div className="allRecipesWrapper">
         {recipeState.map((recipe) => {
           return (

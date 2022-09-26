@@ -1,7 +1,13 @@
 .allRecipes {
-  padding: 150px 0;
+  padding: 100px 0;
   max-width: 1080px;
   margin: 0 auto;
+
+  h1 {
+    font-size: 40px;
+    text-align: center;
+    padding-bottom: 70px;
+  }
   .allRecipesWrapper {
     display: flex;
     flex-direction: row;

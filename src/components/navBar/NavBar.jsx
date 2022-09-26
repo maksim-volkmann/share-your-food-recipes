@@ -15,16 +15,9 @@ const NavBar = () => {
       <div className="navBarWrapper">
         <nav>
           <Logo />
-          <div className="toggle">
-            <a href="#">
-              {/* <span class="material-symbols-outlined">menu</span> */}
-              {/* <span class="material-symbols-outlined">menu_open</span> */}
-            </a>
-          </div>
           <ul>
             <NavItem name="Home" link="/" />
-            <NavItem name="Recipes" link="/recipes" />
-            {/* <NavItem name="Upload" link="#" /> */}
+            {/* <NavItem name="Recipes" link="/recipes" /> */}
 
             <NavItem name="Contact" link="/contact" />
 
@@ -42,8 +35,6 @@ const NavBar = () => {
                 <LogOut />
               </>
             )}
-
-            {/* <NavItem name="Register" link="#" /> */}
           </ul>
         </nav>
       </div>
