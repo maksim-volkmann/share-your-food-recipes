@@ -67,6 +67,7 @@ const NewRecipeForm = ({ optionTitle, option1, option2, option3, option4 }) => {
                 name="name"
                 placeholder="Recipe title"
                 value={name}
+                required
               />
             </div>
             <div className="newRecipeItem2">
@@ -76,6 +77,7 @@ const NewRecipeForm = ({ optionTitle, option1, option2, option3, option4 }) => {
                 name="description1"
                 placeholder="Summary"
                 value={description1}
+                required
               />
             </div>
             <div className="newRecipeItem3">
@@ -85,6 +87,7 @@ const NewRecipeForm = ({ optionTitle, option1, option2, option3, option4 }) => {
                 name="servings"
                 placeholder="Servings"
                 value={servings}
+                required
               />
               <input
                 onChange={handleChange}
@@ -92,6 +95,7 @@ const NewRecipeForm = ({ optionTitle, option1, option2, option3, option4 }) => {
                 name="calories"
                 placeholder="Calories"
                 value={calories}
+                required
               />
               <input
                 onChange={handleChange}
@@ -99,6 +103,7 @@ const NewRecipeForm = ({ optionTitle, option1, option2, option3, option4 }) => {
                 name="readyIn"
                 placeholder="Ready In"
                 value={readyIn}
+                required
               />
               <select
                 onChange={handleChange}
@@ -106,8 +111,9 @@ const NewRecipeForm = ({ optionTitle, option1, option2, option3, option4 }) => {
                 name="goodFor"
                 placeholder="Select good for"
                 value={goodFor}
+                required
               >
-                <option>{optionTitle}</option>
+                <option value="">{optionTitle}</option>
                 <option key="breakfast" value="breakfast">
                   {option1}
                 </option>
@@ -129,6 +135,7 @@ const NewRecipeForm = ({ optionTitle, option1, option2, option3, option4 }) => {
                 name="ingredients"
                 placeholder="Ingredients"
                 value={ingredients}
+                required
               />
             </div>
             <div className="newRecipeItem5">
@@ -138,6 +145,7 @@ const NewRecipeForm = ({ optionTitle, option1, option2, option3, option4 }) => {
                 name="description2"
                 placeholder="Instructions"
                 value={description2}
+                required
               />
             </div>
             <div className="newRecipeItem6">
@@ -145,22 +153,25 @@ const NewRecipeForm = ({ optionTitle, option1, option2, option3, option4 }) => {
                 onChange={handleChange}
                 type="text"
                 name="mainImage"
-                placeholder="Write images URL"
+                placeholder="Main images URL"
                 value={mainImage}
+                required
               />
               <input
                 onChange={handleChange}
                 type="text"
                 name="image2"
-                placeholder="Write images URL"
+                placeholder="Second images URL"
                 value={image2}
+                required
               />
               <input
                 onChange={handleChange}
                 type="text"
                 name="image3"
-                placeholder="Write images URL"
+                placeholder="Third images URL"
                 value={image3}
+                required
               />
             </div>
             <input id="submitBtn" type="submit" value="Submit" />
