@@ -4,6 +4,7 @@ import axios from 'axios'
 import { useNavigate } from 'react-router-dom'
 import useRecipesHook from '../../customHooks/useRecipesHook'
 import { useState } from 'react'
+import { MdLaptopWindows } from 'react-icons/md'
 
 const DeleteRecipeButton = ({ btnTitle }) => {
   let { id } = useParams()
@@ -20,15 +21,14 @@ const DeleteRecipeButton = ({ btnTitle }) => {
         setDel([...recipeState].filter((recipe) => recipe.id !== id)),
       )
 
-      let areYouSureToDelete = prompt(
-        'If you realy want to delete this recipe, please type: confirm',
-      )
-      if (areYouSureToDelete === 'confirm') {
-        alert('Recipe successfully deleted!')
-        navigate('/')
+      if (window.confirm('Are you sure you want to delete this recipe?')) {
+        return
       }
+
+      alert('Recipe successfully deleted!')
+      navigate('/')
     } catch (error) {
-      console.error(error)
+      alert("You can't delete this recipe, its not yours!")
     }
   }
   return (

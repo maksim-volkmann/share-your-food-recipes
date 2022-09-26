@@ -2,10 +2,9 @@ import '../newRecipeForm/newRecipeForm.scss'
 import { useCallback, useState } from 'react'
 import axios from 'axios'
 import { useParams } from 'react-router-dom'
-import useRecipesHook from '../../customHooks/useRecipesHook.js'
 import useRecipeUpdateHook from '../../customHooks/useRecipeUpdateHook'
 
-const UpdateTestForm = ({
+const UpdateRecipeForm = ({
   optionTitle,
   option1,
   option2,
@@ -28,7 +27,9 @@ const UpdateTestForm = ({
         { withCredentials: true },
       )
       console.log(res)
+      alert(`You successfuly updated your recipe!`)
     } catch (error) {
+      alert("This is not your recipe. You can't update it!")
       console.error(error)
     }
 
@@ -184,4 +185,4 @@ const UpdateTestForm = ({
   )
 }
 
-export default UpdateTestForm
+export default UpdateRecipeForm
