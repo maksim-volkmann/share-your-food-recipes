@@ -18,7 +18,7 @@ const ContactPage = () => {
       </div>
       <Contact />
       <Newsletter
-        title={'Join our newletter and get the latest recipes!'}
+        title={'Join our newsletter and get the latest recipes!'}
         btnTitle={'Send'}
       />
       <Footer />

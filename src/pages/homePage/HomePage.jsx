@@ -23,7 +23,7 @@ const HomePage = () => {
       {/* <UsersRecipes /> */}
       <HomeBody />
       <Newsletter
-        title={'Join our newletter and get the latest recipes!'}
+        title={'Join our newsetter and get the latest recipes!'}
         btnTitle={'Send'}
       />
       <Footer />

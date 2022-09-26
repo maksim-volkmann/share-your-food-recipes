@@ -18,7 +18,7 @@ const LoginPage = () => {
       </div>
       <LoginForm />
       <Newsletter
-        title={'Join our newletter and get the latest recipes!'}
+        title={'Join our newsletter and get the latest recipes!'}
         btnTitle={'Send'}
       />
       <Footer />
