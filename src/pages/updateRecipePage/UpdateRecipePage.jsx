@@ -1,4 +1,4 @@
-import UpdateRecipeForm from '../../components/updateTestForm/UpdateRecipeForm'
+import UpdateRecipeForm from '../../components/updateRecipeForm/UpdateRecipeForm'
 
 const UpdateRecipePage = () => {
   return (

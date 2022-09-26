@@ -14,21 +14,18 @@ const DeleteRecipeButton = ({ btnTitle }) => {
 
   const handleSubmit = async (e) => {
     e.preventDefault()
-    try {
-      const res = await axios.delete(
-        `http://localhost:5000/recipe/delete/${id}`,
-        { withCredentials: true },
-        setDel([...recipeState].filter((recipe) => recipe.id !== id)),
-      )
-
-      if (window.confirm('Are you sure you want to delete this recipe?')) {
-        return
+    if (window.confirm("Are you sure you want to delete this recipe?")) {
+      try {
+        const res = await axios.delete(
+          `http://localhost:5000/recipe/delete/${id}`,
+          { withCredentials: true },
+          setDel([...recipeState].filter((recipe) => recipe.id !== id))
+        );
+        alert("Recipe successfully deleted!")
+        navigate("/")
+      } catch (error) {
+        alert("You can't delete this recipe, its not yours!")
       }
-
-      alert('Recipe successfully deleted!')
-      navigate('/')
-    } catch (error) {
-      alert("You can't delete this recipe, its not yours!")
     }
   }
   return (
