@@ -1,8 +1,8 @@
-import ContactInfo from "../../componentHelpers/contactInfo/ContactInfo";
-import "./contact.scss";
-import Newsletter from "../../componentHelpers/newsletter/Newsletter";
-import ContactForm from "../../componentHelpers/contactForm/ContactForm";
-import ContactMap from "../../componentHelpers/contactMap/ContactMap";
+import ContactInfo from '../../componentHelpers/contactInfo/ContactInfo'
+import './contact.scss'
+import Newsletter from '../../componentHelpers/newsletter/Newsletter'
+import ContactForm from '../../componentHelpers/contactForm/ContactForm'
+import ContactMap from '../../componentHelpers/contactMap/ContactMap'
 
 const Contact = () => {
   return (
@@ -21,12 +21,11 @@ const Contact = () => {
         <ContactForm
           title="Get In Touch With Us"
           description="Please fill this form and we will get in touch with you as soons as possible."
-          btnTitle={"Send"}
+          btnTitle={'Send'}
         />
       </div>
-      <Newsletter title={"Join our newsletter and get the latest recipes!"} />
     </>
-  );
-};
+  )
+}
 
-export default Contact;
+export default Contact
