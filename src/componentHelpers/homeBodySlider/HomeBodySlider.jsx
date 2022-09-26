@@ -5,7 +5,7 @@ import useRecipesHook from '../../customHooks/useRecipesHook'
 import { useNavigate } from 'react-router-dom'
 import { useState, useMemo } from 'react'
 
-const HomeBodySlider = ({ sliderTitle, summary, btnTitle }) => {
+const HomeBodySlider = ({ sliderTitle, btnTitle }) => {
   const recipesState = useRecipesHook()
   const navigate = useNavigate()
   const [maxRecipes, setMaxRecipes] = useState(6)

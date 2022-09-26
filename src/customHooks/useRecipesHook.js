@@ -1,5 +1,4 @@
 import { useState, useEffect } from 'react'
-import mockData from '../mock/mockData.js'
 import axios from 'axios'
 
 function useRecipesHook() {
@@ -12,8 +11,6 @@ function useRecipesHook() {
         console.log('recipe hook')
         const recipesData = await axios.get(url)
         console.log(recipesData)
-        console.log(mockData)
-        // const data = mockData
         const recipes = recipesData.data
         setRecipes(recipes)
       } catch (error) {

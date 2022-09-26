@@ -4,7 +4,6 @@ import axios from 'axios'
 import { useNavigate } from 'react-router-dom'
 import useRecipesHook from '../../customHooks/useRecipesHook'
 import { useState } from 'react'
-import { MdLaptopWindows } from 'react-icons/md'
 
 const DeleteRecipeButton = ({ btnTitle }) => {
   let { id } = useParams()

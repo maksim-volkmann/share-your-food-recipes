@@ -12,8 +12,7 @@ const UpdateRecipeForm = ({
   option4,
 }) => {
   let { id } = useParams()
-  const recipeState = useRecipesHook()
-
+  const recipes = useRecipesHook()
   const [recipeUpdate, setRecipeUpdate] = useState([])
 
   const handleSubmit = async (e) => {
@@ -55,7 +54,7 @@ const UpdateRecipeForm = ({
 
   return (
     <>
-      {recipeState
+      {recipes
         .filter((recipeID) => recipeID._id === id)
         .map((recipe) => {
           return (

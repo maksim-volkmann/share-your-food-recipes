@@ -1,6 +1,5 @@
 import ContactInfo from '../../componentHelpers/contactInfo/ContactInfo'
 import './contact.scss'
-import Newsletter from '../../componentHelpers/newsletter/Newsletter'
 import ContactForm from '../../componentHelpers/contactForm/ContactForm'
 import ContactMap from '../../componentHelpers/contactMap/ContactMap'
 
