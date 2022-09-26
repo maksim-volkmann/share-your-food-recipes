@@ -1,11 +1,9 @@
+import './homePage.scss'
+
 import Footer from '../../components/footer/Footer'
 import Header from '../../components/header/Header'
 import HomeBody from '../../components/homeBody/HomeBody'
 import NavBar from '../../components/navBar/NavBar'
-import NewRecipeForm from '../../components/newRecipeForm/NewRecipeForm'
-import UsersRecipes from '../../components/usersRecipes/UsersRecipes'
-import './homePage.scss'
-import RecipeTest from './RecipeTest.jsx'
 import Newsletter from '../../componentHelpers/newsletter/Newsletter'
 import AllRecipes from '../../components/allRecipes/AllRecipes'
 
@@ -17,20 +15,18 @@ const HomePage = () => {
         <Header
           className="home-header"
           title="New Recipes Every Day"
-          description="Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias consequuntur earum magnam non enim, quia quam qui! Ratione nemo ex ducimus, rerum similique odit distinctio. Odio fuga dicta nihil illo."
+          description="Hello and welcome to the Code&Cook website. Here you can register and share all your favorit recipes with others and ofcorse get inspiration for others!"
           button="Browse Recipes"
         />
       </div>
       <AllRecipes />
-      <UsersRecipes />
-      <NewRecipeForm />
+      {/* <UsersRecipes /> */}
       <HomeBody />
       <Newsletter
         title={'Join our newletter and get the latest recipes!'}
         btnTitle={'Send'}
       />
       <Footer />
-      <RecipeTest />
     </>
   )
 }

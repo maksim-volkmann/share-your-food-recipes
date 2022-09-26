@@ -1,53 +1,57 @@
+// @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500&display=swap');
+
 .contactFormWrapper {
-    width: 60%;
-    margin: 4rem 2rem;
-    line-height: 2rem;
-    color: #fff;
+  width: 60%;
+  margin: 4rem 2rem;
+  line-height: 2rem;
+  color: #fff;
 
-    h1 {
-        margin-bottom: 2rem;
-    }
+  h1 {
+    margin-bottom: 2rem;
+  }
 
-    .contactFormContent {
-        margin-top: 2rem;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
+  .contactFormContent {
+    margin-top: 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 
-        .contactFromDetails {
-            width: 70%;
-            max-width: 400px;
+    .contactFromDetails {
+      width: 70%;
+      max-width: 400px;
 
-            input,
-            textarea {
-                width: 100%;
-                height: 30px;
-                border: 0.5px solid #1f1f1f32;
-                padding: 1rem;
-                margin-top: 1rem;
-            }
+      input,
+      textarea {
+        width: 100%;
+        height: 30px;
+        border: 0.5px solid #1f1f1f32;
+        padding: 1rem;
+        margin-top: 1rem;
+        font-family: 'Montserrat', sans-serif;
+      }
 
-            textarea {
-                height: 100px;
-            }
+      textarea {
+        font-family: 'Montserrat', sans-serif;
+        height: 100px;
+      }
 
-            #submitBtn {
-                width: 70px;
-                padding: 0.5rem;
-                margin-top: 0.5rem;
-                color: #fff;
-                background-color: #eabd31;
-                border: none;
-                text-transform: uppercase;
-                cursor: pointer;
-                float: right;
-                transition: transform .7s;
+      #submitBtn {
+        width: 70px;
+        padding: 10px 15px 25px;
+        margin-top: 0.5rem;
+        color: #fff;
+        background-color: #eabd31;
+        border: none;
+        text-transform: uppercase;
+        cursor: pointer;
+        float: right;
+        transition: transform 0.7s;
 
-                &:hover {
-                    transform: scale(1.1);
-                }
-            }
+        &:hover {
+          transform: scale(1.1);
         }
+      }
     }
+  }
 }

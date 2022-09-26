@@ -2,7 +2,7 @@ import './loginPage.scss'
 import NavBar from '../../components/navBar/NavBar'
 import Header from '../../components/header/Header'
 import Footer from '../../components/footer/Footer'
-import Login from '../../components/login/Login'
+import LoginForm from '../../components/loginForm/LoginForm'
 import Newsletter from '../../componentHelpers/newsletter/Newsletter'
 
 const LoginPage = () => {
@@ -16,7 +16,7 @@ const LoginPage = () => {
           button="Go and log in NOW"
         />
       </div>
-      <Login />
+      <LoginForm />
       <Newsletter
         title={'Join our newletter and get the latest recipes!'}
         btnTitle={'Send'}

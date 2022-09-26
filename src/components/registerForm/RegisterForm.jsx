@@ -12,8 +12,6 @@ const RegisterForm = () => {
 
   const history = useNavigate()
 
-  console.log('Register Info')
-  console.log(registerInfo)
   const onChangeHandler = (e) => {
     setRegisterInfo((prev) => ({ ...prev, [e.target.name]: e.target.value }))
   }
@@ -21,19 +19,17 @@ const RegisterForm = () => {
   const registerNewUser = async () => {
     try {
       console.log(registerInfo)
-      const res = await axios.post(
-        'http://localhost:5000/api/register',
-        registerInfo,
-        { withCredentials: true },
-      )
-      console.log(`res: `)
+      await axios.post('http://localhost:5000/api/register', registerInfo, {
+        withCredentials: true,
+      })
+
       history('/login')
-      console.log(res)
       alert(
         `User ${registerInfo.username} successfully registered. You can log in now!`,
       )
     } catch (error) {
       console.error(error)
+      alert('You missed some fields. Please try again!')
     }
   }
 

@@ -1,17 +1,38 @@
+.update-delete-box {
+  display: flex;
+  justify-content: flex-end;
+  padding-right: 3vw;
+  padding-top: 30px;
+  background-color: #fffde4;
+  gap: 10px;
+
+  .updateBtn {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 600;
+    background-color: #fbc531;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    padding: 13px 20px;
+    cursor: pointer;
+    border: 3px solid rgba(0, 0, 0, 0);
+    letter-spacing: 1.5px;
+
+    &:hover {
+      border: 3px solid #fbc531;
+      background-color: #fffde4;
+      color: #000;
+    }
+  }
+}
+
 .recipeWrapper {
   width: 100%;
-  height: auto;
-  margin-top: 3rem;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  color: #000;
+  padding-top: 80px;
   background-color: #fffde4;
 
   h1 {
     text-align: center;
-    margin-bottom: 2rem;
     font-size: 50px;
   }
 
@@ -30,11 +51,19 @@
   text-transform: capitalize;
   line-height: 1.5;
 
+  @media screen and (max-width: 520px) {
+    display: block;
+  }
+
   .textWrap {
     // font-size: 18px;
     font-size: var(--recipe-page-20);
     border: 1px solid #ededed;
     padding: 1% 6%;
+
+    @media screen and (max-width: 520px) {
+      margin: 10px;
+    }
   }
 }
 
@@ -58,15 +87,20 @@
     h4 {
       padding-top: 30px;
       font-size: 20px;
+      text-transform: capitalize;
     }
 
     p {
       font-size: 20px;
     }
 
-    img {
-      width: 500px;
-      height: auto;
+    .intro-image {
+      max-width: 500px;
+
+      img {
+        width: 100%;
+        height: auto;
+      }
     }
   }
 
@@ -83,7 +117,7 @@
   justify-content: center;
 
   .recipeIngredients {
-    width: 300px;
+    max-width: 300px;
 
     .ingrList {
       font-size: 18px;
@@ -97,21 +131,25 @@
     p {
       font-size: 20px;
       line-height: 2;
+      margin: 10px;
     }
-  }
-}
-
-.image-box-wrapper {
-  display: flex;
-  gap: 5vw;
-  flex-wrap: wrap;
-  justify-content: center;
-
-  img {
-    width: 500px;
   }
 }
 
 .images-box {
   padding-bottom: 80px;
+
+  .image-box-wrapper {
+    display: flex;
+    gap: 5vw;
+    flex-wrap: wrap;
+    justify-content: center;
+
+    .image-container {
+      max-width: 500px;
+      img {
+        width: 100%;
+      }
+    }
+  }
 }
