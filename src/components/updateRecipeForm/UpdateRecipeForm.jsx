@@ -61,6 +61,7 @@ const UpdateRecipeForm = ({
           return (
             <>
               <div className="newRecipeFormContainer">
+                <h1>UPDATING RECIPE: {recipe.name}</h1>
                 <div className="newRecipeFormWrapper">
                   <form
                     onSubmit={handleSubmit}

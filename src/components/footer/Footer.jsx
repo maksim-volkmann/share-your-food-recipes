@@ -9,7 +9,7 @@ const Footer = () => {
   return (
     <div className="footer">
       <div className="footer__contactInfo">
-        <a href="#">
+        <a href="">
           <img src={fbIcon} />
         </a>
         <a href="#">
