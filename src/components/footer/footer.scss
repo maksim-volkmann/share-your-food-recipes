@@ -4,14 +4,19 @@
 .footer {
   background-color: #1f1f1f;
   font-family: 'Titillium Web', sans-serif;
-  &__contactInfo {
+  &__social {
     padding-top: 50px;
     display: flex;
     justify-content: center;
+
     a {
       padding: 0 10px;
       img {
         width: 40px;
+        transition: transform 0.7s;
+        &:hover {
+          transform: scale(1.3);
+        }
       }
     }
   }

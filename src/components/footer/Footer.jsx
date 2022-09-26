@@ -8,20 +8,20 @@ import youIcon from '../../images/icons/yt_icon_w.png'
 const Footer = () => {
   return (
     <div className="footer">
-      <div className="footer__contactInfo">
-        <a href="">
+      <div className="footer__social">
+        <a href="https://www.facebook.com/simplyrecipes/" target="_blank">
           <img src={fbIcon} />
         </a>
-        <a href="#">
+        <a href="https://www.instagram.com/love_food/" target="_blank">
           <img src={igIcon} />
         </a>
-        <a href="#">
+        <a href="https://www.youtube.com/watch?v=7MRoEFl7z6Q" target="_blank">
           <img src={youIcon} />
         </a>
-        <a href="#">
+        <a href="https://www.tiktok.com/@5.minute.recipes" target="_blank">
           <img src={tikIcon} />
         </a>
-        <a href="#">
+        <a href="https://twitter.com/twitterfood?lang=en" target="_blank">
           <img src={twitIcon} />
         </a>
       </div>
