@@ -18,9 +18,9 @@ const HomeBodySlider = ({ sliderTitle, btnTitle }) => {
       <h1>{sliderTitle}</h1>
       <div className="sliderWrapper">
         <Splide options={{ rewind: true, type: 'fade' }}>
-          {reducedRecipes.map((recipe) => {
+          {reducedRecipes.map((recipe, i) => {
             return (
-              <SplideSlide>
+              <SplideSlide key={i}>
                 <div className="sliderItem" key={recipe.id}>
                   <div className="imgWrapper">
                     <img src={recipe.mainImage} alt={recipe.name} />
