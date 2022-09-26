@@ -13,6 +13,7 @@ const LogOut = () => {
       withCredentials: true,
     })
     await userLoggedInInfo()
+    alert('You are logged out!')
     history('/')
   }
   return (

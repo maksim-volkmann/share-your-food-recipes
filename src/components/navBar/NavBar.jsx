@@ -37,7 +37,7 @@ const NavBar = () => {
 
             {isLoggedIn === true && (
               <>
-                <NavItem name="Recipe" link="/recipe:id" />
+                {/* <NavItem name="Recipe" link="/recipe:id" /> */}
                 <NavItem name="New Recipe" link="/newrecipe" />
                 <LogOut />
               </>

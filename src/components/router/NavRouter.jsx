@@ -31,10 +31,9 @@ const NavRouter = () => {
             <Route path="/recipe/:id/edit" element={<EditRecipe />} />
             <Route path="/update/:id" element={<UpdateTestPage />} />
             <Route path="/newrecipe" element={<NewRecipePage />} />
-            <Route path="/recipe/:id" element={<RecipePage />} />
           </>
         )}
-
+        <Route path="/recipe/:id" element={<RecipePage />} />
         <Route path="/recipes" element={<RecipesPage />} />
 
         <Route path="/contact" element={<ContactPage />} />
