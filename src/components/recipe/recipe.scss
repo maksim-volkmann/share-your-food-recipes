@@ -12,7 +12,7 @@
   h1 {
     text-align: center;
     margin-bottom: 2rem;
-    font-size: 2.5rem;
+    font-size: 50px;
   }
 
   a {
@@ -21,11 +21,14 @@
 }
 
 .textWrapper {
+  font-family: 'Montserrat', sans-serif;
   display: flex;
   width: 100%;
   margin-bottom: 2vh;
   justify-content: center;
   align-items: center;
+  text-transform: capitalize;
+  line-height: 1.5;
 
   .textWrap {
     font-size: 18px;
@@ -36,60 +39,78 @@
 
 .introduction {
   display: flex;
-  max-width: 1080px;
+  padding-top: 50px;
+  align-items: center;
+  justify-content: center;
+  gap: 5vw;
+  flex-wrap: wrap;
 
   .introductionWrapper {
-    flex: 50%;
+    line-height: 2;
 
     h2 {
-      font-size: 30 px;
+      font-size: 35px;
+      border-bottom: 1px solid #000;
+      padding-bottom: 30px;
+    }
+
+    h4 {
+      padding-top: 30px;
+      font-size: 20px;
+    }
+
+    p {
+      font-size: 20px;
+    }
+
+    img {
+      width: 500px;
+      height: auto;
+    }
+  }
+
+  .intro-text {
+    width: 500px;
+  }
+}
+
+.recipeInfo {
+  display: flex;
+  gap: 5vw;
+  padding: 80px 0;
+  flex-wrap: wrap;
+  justify-content: center;
+
+  .recipeIngredients {
+    width: 300px;
+
+    .ingrList {
+      font-size: 18px;
+      padding-left: 30px;
+      padding-top: 20px;
+    }
+  }
+
+  .recipeInstructions {
+    width: 700px;
+    p {
+      font-size: 20px;
+      line-height: 2;
     }
   }
 }
 
-// .recipeIntro {
-//   display: flex;
-//   flex-direction: row;
-//   width: 80%;
-//   border-radius: 1rem;
-//   overflow: hidden;
-//   margin-bottom: 2rem;
+.image-box-wrapper {
+  display: flex;
+  gap: 5vw;
+  flex-wrap: wrap;
+  justify-content: center;
 
-//   img {
-//     width: 100%;
-//     max-height: 15rem;
-//     border-radius: 1rem;
-//     object-fit: cover;
-//     margin-right: 2rem;
-//   }
+  img {
+    width: 500px;
+  }
+}
 
-//   h3 {
-//     text-align: justify;
-//   }
-// }
-
-// .recipeInfo {
-//   width: 80%;
-//   margin-bottom: 2rem;
-//   justify-content: space-evenly;
-//   align-items: center;
-
-//   h2 {
-//     margin-bottom: 1rem;
-//     font-size: 2rem;
-//   }
-
-//   p {
-//     font-size: 1.1rem;
-//   }
-
-//   .recipeIngredients {
-//     margin-right: 2rem;
-//     padding: 1rem;
-//   }
-
-//   .recipeInstructions {
-//     text-align: justify;
-//     padding: 1rem;
-//   }
-// }
+.images-box {
+  padding-bottom: 80px;
+}
