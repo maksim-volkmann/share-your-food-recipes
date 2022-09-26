@@ -57,6 +57,7 @@ const NewRecipeForm = ({ optionTitle, option1, option2, option3, option4 }) => {
 
   return (
     <div className="newRecipeFormContainer">
+      <h1>CREATE NEW RECIPE</h1>
       <div className="newRecipeFormWrapper">
         <form onSubmit={handleSubmit} action="" method="post">
           <div className="newRecipeFormContent">

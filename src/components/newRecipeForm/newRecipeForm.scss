@@ -5,6 +5,10 @@
   margin: 3rem;
   flex-direction: column;
 
+  h1 {
+    padding-bottom: 15px;
+  }
+
   .newRecipeFormWrapper {
     width: 50%;
     max-width: 700px;
@@ -68,6 +72,7 @@
       text-transform: uppercase;
       cursor: pointer;
       transition: transform 0.7s;
+      margin-top: 30px;
 
       &:hover {
         transform: scale(1.1);
