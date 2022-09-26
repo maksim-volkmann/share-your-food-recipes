@@ -14,7 +14,7 @@ const ContactMap = () => {
   return (
     <div className="mapWrapper">
       <GoogleMapReact
-        //bootstrapURLKeys={{ key: env.MAP_API_KEY }}
+        bootstrapURLKeys={{ key: env.MAP_API_KEY }}
         defaultCenter={defaultProps.center}
         defaultZoom={defaultProps.zoom}
       >

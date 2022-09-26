@@ -19,11 +19,12 @@ const HomePage = () => {
           button="Browse Recipes"
         />
       </div>
-      <AllRecipes />
-      {/* <UsersRecipes /> */}
+      <AllRecipes
+      title={"ALL YOUR FAVORITE RECIPES"}
+      linkTitle={"Make this"} />
       <HomeBody />
       <Newsletter
-        title={'Join our newsetter and get the latest recipes!'}
+        title={'Join our newsletter and get the latest recipes!'}
         btnTitle={'Send'}
       />
       <Footer />
