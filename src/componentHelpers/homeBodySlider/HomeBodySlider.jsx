@@ -33,7 +33,7 @@ const HomeBodySlider = ({ sliderTitle, summary, btnTitle }) => {
                       {' | '}
                       <span className="category">{recipe.goodFor}</span>
                     </p>
-                    <h3>{recipe.description1.substring(0, 225)}</h3>
+                    <h3>{recipe.description1.substring(0, 120)}</h3>
 
                     <button onClick={() => navigate('/recipe/' + recipe._id)}>
                       {btnTitle}
