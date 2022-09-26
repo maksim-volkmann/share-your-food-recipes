@@ -4,8 +4,6 @@ import { createContext, useEffect, useState } from 'react'
 const LoggedContext = createContext()
 
 const LoggedInChecker = (props) => {
-  console.log('context')
-
   const [isLoggedIn, setIsLoggedIn] = useState(undefined)
   const userLoggedInInfo = async () => {
     const isLoogedInRes = await axios.get(

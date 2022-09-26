@@ -23,6 +23,7 @@ const Login = () => {
         { withCredentials: true },
       )
       await userLoggedInInfo()
+      console.log(loginInfo)
       alert('Successfully logged in!')
       history('/')
       return response

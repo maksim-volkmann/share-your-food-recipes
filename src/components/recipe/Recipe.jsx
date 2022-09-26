@@ -3,8 +3,11 @@ import useRecipesHook from '../../customHooks/useRecipesHook.js'
 import { useParams } from 'react-router-dom'
 import DeleteRecipeButton from '../../componentHelpers/deleteRecipeButton/DeleteRecipeButton'
 import { useNavigate } from 'react-router-dom'
+import { useContext } from 'react'
+import LoggedContext from '../../context/LoggedInChecker'
 
 function Recipe() {
+  const { isLoggedIn } = useContext(LoggedContext)
   let { id } = useParams()
   const recipeState = useRecipesHook()
   const navigate = useNavigate()
@@ -16,18 +19,22 @@ function Recipe() {
         .map((recipe) => {
           return (
             <>
-              <div className="update-delete-box">
-                <button
-                  className="updateBtn"
-                  onClick={() => navigate('/update/' + recipe._id)}
-                >
-                  UPDATE
-                </button>
-                <DeleteRecipeButton btnTitle="Delete" />
-              </div>
-              <div className="recipeWrapper">
-                <h1>{recipe.name}</h1>
+              {isLoggedIn === true && (
+                <>
+                  <div className="update-delete-box">
+                    <button
+                      className="updateBtn"
+                      onClick={() => navigate('/update/' + recipe._id)}
+                    >
+                      UPDATE
+                    </button>
+                    <DeleteRecipeButton btnTitle="Delete" />
+                  </div>
+                </>
+              )}
 
+              <div className="recipeWrapper recipeBigText">
+                <h1>{recipe.name}</h1>
                 <div className="textWrapper">
                   <div className="textWrap">
                     <h4>Servings:</h4>
