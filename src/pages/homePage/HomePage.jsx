@@ -15,7 +15,7 @@ const HomePage = () => {
         <Header
           className="home-header"
           title="New Recipes Every Day"
-          description="Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias consequuntur earum magnam non enim, quia quam qui! Ratione nemo ex ducimus, rerum similique odit distinctio. Odio fuga dicta nihil illo."
+          description="Hello and welcome to the Code&Cook website. Here you can register and share all your favorit recipes with others and ofcorse get inspiration for others!"
           button="Browse Recipes"
         />
       </div>
