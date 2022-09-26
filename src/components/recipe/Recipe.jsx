@@ -49,8 +49,10 @@ function Recipe() {
                 <h4>By: {recipe.author}</h4>
                 <p>{recipe.description1}</p>
               </div>
-              <div className="introductionWrapper intro-image">
-                <img src={recipe.mainImage} alt={recipe.name} />
+              <div className="introductionWrapper">
+                <div className="intro-image">
+                  <img src={recipe.mainImage} alt={recipe.name} />
+                </div>
               </div>
             </div>
 
@@ -70,8 +72,12 @@ function Recipe() {
 
             <div className="images-box">
               <div className="image-box-wrapper">
-                <img src={recipe.image2} alt={recipe.name} />
-                <img src={recipe.image3} alt={recipe.name} />
+                <div className="image-container">
+                  <img src={recipe.image2} alt={recipe.name} />
+                </div>
+                <div className="image-container">
+                  <img src={recipe.image3} alt={recipe.name} />
+                </div>
               </div>
             </div>
           </div>
