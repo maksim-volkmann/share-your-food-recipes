@@ -3,6 +3,7 @@ import NavBar from '../../components/navBar/NavBar'
 import NewRecipeForm from '../../components/newRecipeForm/NewRecipeForm'
 import Footer from '../../components/footer/Footer'
 import Header from '../../components/header/Header'
+import Newsletter from '../../componentHelpers/newsletter/Newsletter'
 
 const NewRecipePage = () => {
   return (
@@ -12,8 +13,8 @@ const NewRecipePage = () => {
         <Header
           className="home-header"
           title="Add Your New Recipe Here!"
-          description="Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias consequuntur earum magnam non enim, quia quam qui! Ratione nemo ex ducimus, rerum similique odit distinctio. Odio fuga dicta nihil illo."
-          button="Browse Recipes"
+          description="Do you any good recipe? Share with us, so others can enjoy them too!"
+          button="Add your recipe now!"
         />
       </div>
       <NewRecipeForm
@@ -22,6 +23,10 @@ const NewRecipePage = () => {
         option2="Lunch"
         option3="Dinner"
         option4="Snack"
+      />
+      <Newsletter
+        title={'Join our newletter and get the latest recipes!'}
+        btnTitle={'Send'}
       />
       <Footer />
     </>
