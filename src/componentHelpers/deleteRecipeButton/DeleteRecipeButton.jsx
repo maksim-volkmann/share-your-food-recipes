@@ -19,8 +19,14 @@ const DeleteRecipeButton = ({ btnTitle }) => {
         { withCredentials: true },
         setDel([...recipeState].filter((recipe) => recipe.id !== id)),
       )
-      alert('Recipe successfully deleted!')
-      navigate('/')
+
+      let areYouSureToDelete = prompt(
+        'If you realy want to delete this recipe, please type: confirm',
+      )
+      if (areYouSureToDelete === 'confirm') {
+        alert('Recipe successfully deleted!')
+        navigate('/')
+      }
     } catch (error) {
       console.error(error)
     }
