@@ -31,7 +31,8 @@
   line-height: 1.5;
 
   .textWrap {
-    font-size: 18px;
+    // font-size: 18px;
+    font-size: var(--recipe-page-20);
     border: 1px solid #ededed;
     padding: 1% 6%;
   }
@@ -92,7 +93,7 @@
   }
 
   .recipeInstructions {
-    width: 700px;
+    max-width: 700px;
     p {
       font-size: 20px;
       line-height: 2;
