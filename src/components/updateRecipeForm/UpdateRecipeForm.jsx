@@ -2,7 +2,7 @@ import '../newRecipeForm/newRecipeForm.scss'
 import { useCallback, useState } from 'react'
 import axios from 'axios'
 import { useParams } from 'react-router-dom'
-import useRecipeUpdateHook from '../../customHooks/useRecipeUpdateHook'
+import useRecipesHook from '../../customHooks/useRecipesHook'
 
 const UpdateRecipeForm = ({
   optionTitle,
@@ -12,7 +12,7 @@ const UpdateRecipeForm = ({
   option4,
 }) => {
   let { id } = useParams()
-  const recipeState = useRecipeUpdateHook()
+  const recipeState = useRecipesHook()
 
   const [recipeUpdate, setRecipeUpdate] = useState([])
 
