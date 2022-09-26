@@ -1,12 +1,34 @@
+.update-delete-box {
+  display: flex;
+  justify-content: flex-end;
+  padding-right: 3vw;
+  padding-top: 30px;
+  background-color: #fffde4;
+  gap: 10px;
+
+  .updateBtn {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 600;
+    background-color: #fbc531;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    padding: 13px 20px;
+    cursor: pointer;
+    border: 3px solid rgba(0, 0, 0, 0);
+    letter-spacing: 1.5px;
+
+    &:hover {
+      border: 3px solid #fbc531;
+      background-color: #fffde4;
+      color: #000;
+    }
+  }
+}
+
 .recipeWrapper {
-  // width: 100%;
-  // padding-top: 80px;
-  // height: auto;
-  // display: flex;
-  // flex-direction: column;
-  // justify-content: center;
-  // align-items: center;
-  // color: #000;
+  width: 100%;
+  padding-top: 80px;
   background-color: #fffde4;
 
   h1 {

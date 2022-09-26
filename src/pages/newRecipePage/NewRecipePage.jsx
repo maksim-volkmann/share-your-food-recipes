@@ -9,9 +9,8 @@ const NewRecipePage = () => {
   return (
     <>
       <NavBar />
-      <div className="homepage-header">
+      <div className="newrecipe-header">
         <Header
-          className="home-header"
           title="Add Your New Recipe Here!"
           description="Do you any good recipe? Share with us, so others can enjoy them too!"
           button="Add your recipe now!"
