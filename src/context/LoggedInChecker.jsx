@@ -12,7 +12,7 @@ const LoggedInChecker = (props) => {
         withCredentials: true,
       },
     )
-    console.log(`State is: ${isLoogedInRes.data}`)
+    // console.log(`State is: ${isLoogedInRes.data}`)
     setIsLoggedIn(isLoogedInRes.data)
   }
 

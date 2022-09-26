@@ -8,9 +8,7 @@ function useRecipesHook() {
   useEffect(() => {
     const getRecipes = async () => {
       try {
-        console.log('recipe hook')
         const recipesData = await axios.get(url)
-        console.log(recipesData)
         const recipes = recipesData.data
         setRecipes(recipes)
       } catch (error) {
