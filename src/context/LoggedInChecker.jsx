@@ -1,5 +1,6 @@
 import axios from 'axios'
 import { createContext, useEffect, useState } from 'react'
+import env from 'react-dotenv'
 
 const LoggedContext = createContext()
 
@@ -7,7 +8,7 @@ const LoggedInChecker = (props) => {
   const [isLoggedIn, setIsLoggedIn] = useState(undefined)
   const userLoggedInInfo = async () => {
     const isLoogedInRes = await axios.get(
-      'http://localhost:5000/api/islogged',
+      env.API_LINK + '/api/islogged',
       {
         withCredentials: true,
       },

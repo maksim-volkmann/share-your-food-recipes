@@ -4,6 +4,7 @@ import axios from 'axios'
 import { useState } from 'react'
 import LoggedContext from '../../context/LoggedInChecker'
 import { useNavigate } from 'react-router-dom'
+import env from 'react-dotenv'
 
 const Login = () => {
   const [loginInfo, setLoginInfo] = useState({ email: '', password: '' })
@@ -18,7 +19,7 @@ const Login = () => {
     e.preventDefault()
     try {
       const response = await axios.post(
-        'http://localhost:5000/api/login',
+        env.API_LINK + '/api/login',
         loginInfo,
         { withCredentials: true },
       )

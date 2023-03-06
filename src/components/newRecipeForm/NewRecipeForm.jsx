@@ -2,6 +2,7 @@ import './newRecipeForm.scss'
 import { useCallback, useState } from 'react'
 import axios from 'axios'
 import { useNavigate } from 'react-router-dom'
+import env from 'react-dotenv'
 
 const NewRecipeForm = ({ optionTitle, option1, option2, option3, option4 }) => {
   const [newRecipe, setNewRecipe] = useState([])
@@ -10,7 +11,7 @@ const NewRecipeForm = ({ optionTitle, option1, option2, option3, option4 }) => {
     e.preventDefault()
     try {
       const res = await axios.post(
-        'http://localhost:5000/recipe/create',
+        env.API_LINK + '/recipe/create',
         {
           recipe: newRecipe,
         },

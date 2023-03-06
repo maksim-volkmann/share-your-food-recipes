@@ -2,6 +2,7 @@ import axios from 'axios'
 import { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import './registerForm.scss'
+import env from 'react-dotenv'
 
 const RegisterForm = () => {
   const [registerInfo, setRegisterInfo] = useState({
@@ -19,7 +20,7 @@ const RegisterForm = () => {
   const registerNewUser = async () => {
     try {
       console.log(registerInfo)
-      await axios.post('http://localhost:5000/api/register', registerInfo, {
+      await axios.post(env.API_LINK + '/api/register', registerInfo, {
         withCredentials: true,
       })
 

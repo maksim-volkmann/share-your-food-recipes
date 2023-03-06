@@ -1,9 +1,10 @@
 import { useState, useEffect } from 'react'
 import axios from 'axios'
+import env from 'react-dotenv'
 
 function useRecipesHook() {
   const [recipesState, setRecipes] = useState([])
-  const url = 'http://localhost:5000/recipe/get'
+  const url = env.API_LINK + '/recipe/get'
 
   useEffect(() => {
     const getRecipes = async () => {

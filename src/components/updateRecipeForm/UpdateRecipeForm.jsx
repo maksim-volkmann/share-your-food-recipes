@@ -3,6 +3,7 @@ import { useCallback, useState } from 'react'
 import axios from 'axios'
 import { useParams } from 'react-router-dom'
 import useRecipesHook from '../../customHooks/useRecipesHook'
+import env from 'react-dotenv'
 
 const UpdateRecipeForm = ({
   optionTitle,
@@ -19,7 +20,7 @@ const UpdateRecipeForm = ({
     e.preventDefault()
     try {
       const res = await axios.put(
-        `http://localhost:5000/recipe/update/${id}`,
+        env.API_LINK + `/recipe/update/${id}`,
         {
           ...recipeUpdate,
         },
